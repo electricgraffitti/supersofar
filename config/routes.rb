@@ -12,7 +12,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts
 
   map.resources :articles
+  
+  map.blog 'supersofar-blog', :controller => "blog", :action => "index"
+  map.home 'supersofar-home', :controller => "super", :action => "index"
 
-  map.root 'supersofar-home', :controller => "super", :action => "index"
+  map.root :controller => "super", :action => "index"
   
 end

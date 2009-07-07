@@ -1,36 +1,24 @@
 /*********************************************/
 /*******************GLOBAL********************/
+html {
+  background: #ececec;
+}
 body {
-  background: #24002E;
+  background: #ececec url('../images/super_body_bg.jpg') no-repeat;
   font-family: Arial, "Lucida Grande", Verdana, sans-serif;
   color: #fff;
   font-size: 77%;
 }
-#top_stripe {
-  position: absolute;
-  top: 0px;
-  height: 145px;
-  width: 100%;
-  border-bottom: 5px solid #00ff15;
-}
-.bg_grey_stripe {
-  background: #000 url('../images/headerbg.png') repeat-x;
-}
-#bottom_grey_stripe {
-  width: 100%;
-  height: 75px;
-  border-top: 5px solid #00ff15;
-}
-#bottom_sub_stripe {
-  position: relative;
-}
 #wrapper {
+  background: #fff;
   position: relative;
   min-height: 1000px;
   text-align: left;
+/*  border-left: 1px solid #8e0000;
+  border-right: 1px solid #8e0000;*/
 }
 a {
-  color: #0000ff;
+  color: #000;
 }
 .hide_text {
   text-indent: -1000em;
@@ -73,15 +61,21 @@ a {
 }
 h1, h2, h3, h4, h5 {
   font-weight: bold;
-  color: #333333;
 }
 h1 {
   font-size: 235%;
-  color: #00ff15;
+  color: #000;
 }
 h2 {
   /*font-size: 153.9%;*/
   font-size: 130.9%;
+}
+.header {
+  background: #000;
+}
+.header h2 {
+  padding: 5px;
+  color: #8e0000;
 }
 h3 {
   font-size: 118.5%;
@@ -92,15 +86,7 @@ h4 {
 h5 {
   
 }
-h3 a {
-  font-size: 118.5%;
-  color: #333333;
-  text-decoration: none;
-}
-h3 a:hover {
-  color: #00467f; /* DK BLUE */
-  text-decoration: underline;
-}
+
 p {
   margin: 5px 0px 0px;
 }
@@ -208,25 +194,10 @@ a:active {
 /*********************************************/
 /*******************HEADER********************/
 #hd {
+  background: #000 url('../images/super_header_bg2.jpg') no-repeat;
   position: relative;
-  height: 150px;
-}
-#go_deep {
-  background: url('../images/goDeep.png') no-repeat;
-  width: 179px;
-  height: 71px;
-  position: absolute;
-  right: 0px;
-  bottom: -3px;
-}
-#abyss_logo {
-  background: transparent url('../images/abyss_logo.png') no-repeat;
-  width: 300px;
-  height: 300px;
-  z-index: 10;
-  text-indent: -1000em;
-  display: block;
-  position: absolute;
+  width: 960px;
+  height: 250px;
 }
 /*********************************************/
 /*******************NAVIGATION****************/
@@ -235,7 +206,7 @@ a:active {
   float: right;
   top: 0px;
   height: 20px;
-  color: #00ff15;
+  color: #fff;
   padding: 10px;
 }
 #user_nav a {
@@ -243,124 +214,60 @@ a:active {
   text-decoration: none;
 }
 ul#main_nav {
-  background: #000;
-  position: relative;
-  float: right;
-  width: 500px;
+  background: url('../images/super_nav_bg.jpg') no-repeat;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
 }
 ul#main_nav li {
   float: left;
-  height: 50px;
+  height: 40px;
   text-align: center;
   width: 100px;
-  height: 50px;
 }
 ul#main_nav li a {
   display: block;
   float: left;
   width: 100px;
-  padding: 15px 0px;
+  padding: 12px 0px;
   height: 20px;
-  text-indent: -1000em;
+  color: #fff;
 }
-li#home a {
-  background: transparent url('../images/main_nav.png') 0px 0px no-repeat;
-}
-li#home a:hover {
-  background: transparent url('../images/main_nav.png') 0px -50px no-repeat;
-}
-li#events a {
-  background: transparent url('../images/main_nav.png') -100px 0px no-repeat;
-}
-li#events a:hover {
-  background: transparent url('../images/main_nav.png') -100px -50px no-repeat;
-}
-li#booking a {
-  background: transparent url('../images/main_nav.png') -200px 0px no-repeat;
-}
-li#booking a:hover {
-  background: transparent url('../images/main_nav.png') -200px -50px no-repeat;
-}
-li#specials a {
-  background: transparent url('../images/main_nav.png') -300px 0px no-repeat;
-}
-li#specials a:hover {
-  background: transparent url('../images/main_nav.png') -300px -50px no-repeat;
-}
+
 /*********************************************/
 /*******************MAIN CONTENT**************/
 #bd {
+  width: 960px;
+  margin: 0px;
   position: relative;
-  background: #000;
   min-height: 850px;
 }
-#block_out {
+#main_content {
   position: relative;
-  top: 0px;
-  left: 0px;
-  width: 300px;
-  height: 150px;
-  float: left;
-  
-}
-.main_content {
-  padding-top: 20px;
-}
-.index_box {
-  border: 1px solid #00ff15;
-  padding: 10px;
-  min-height: 50px;
-  margin: 10px;
-}
-.special_box {
-  border: 1px solid #8C00A8;
-  padding: 10px;
-  min-height: 75px;
-  margin: 10px;
-}
-#featured {
-  width: 565px;
-  margin: 10px 35px;
-  min-height: 150px;
-  
-}
-.featured_events {
-  border: 1px solid #00ff15;
-  float: left;
-  width: 615px;
-}
-.featured_events img {
-  margin: 10px 10px 10px 0px;
-}
-.featured_events .description {
-  margin: 10px 0px;
-}
-.featured_events h2 {
-  font-size: 180%;
-}
-h2.index_featured_header {
-  width: 254px;
-  height: 54px;
-  background: url('../images/featured_events.png') no-repeat;
-  display: block;
-  text-indent: -1000em;
-}
-h2.index_event_header {
-  width: 254px;
-  height: 54px;
-  background: url('../images/current_events.png') no-repeat;
-  display: block;
-  text-indent: -1000em;
-}
-h2.index_special_header {
-  width: 231px;
-  height: 51px;
-  background: url('../images/weekly_specials.png') no-repeat;
-  display: block;
-  text-indent: -1000em;
+  width: 660px;
+  margin: 0px;
 }
 .form_wrap {
   margin-left: 50px;
+}
+/*****************************************/
+/*******************SIDEBAR**************/
+#sidebar {
+  position: relative;
+  background: #222;
+  width: 299px;
+  margin: 0px;
+  min-height: 900px;
+  border-left: 1px solid #8e0000;
+}
+/*****************************************/
+/*******************SIDEBAR**************/
+#ft {
+  width: 960px;
+  min-height: 100px;
+  background: #000;
+  border-top: 1px solid #8e0000;
 }
 /*********************************************/
 /******************* FORMS *******************/
@@ -371,10 +278,10 @@ input {
 /*********************************************/
 /*******************BUTTONS*******************/
 .btn {
-  background: #00ff15 url('../images/healthcare_fraud_btn_white.png') bottom left repeat-x;
+  background: #000 url('../images/healthcare_fraud_btn_white.png') bottom left repeat-x;
   padding: 5px; 
-  color: #24002E;
-  border: 1px solid #24002E; 
+  color: #fff;
+  border: 1px solid #333; 
   text-decoration: none; 
   cursor: pointer; 
   -webkit-border-radius: 5px;
@@ -385,7 +292,7 @@ input {
   float: left;
 }
 .btn:hover {
-  background: #24002E;
-  color: #fff;
-  border: 1px solid #fff; 
+  background: #efefef;
+  color: #000;
+  border: 1px solid #000; 
 }

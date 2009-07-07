@@ -12,24 +12,21 @@
       <%= flash[:notice] %>
     </div>
   <% end %>
-	  <div id="hd" class='grid_16 alpha omega'>
+	  <div id="hd">
 	    <%= render :partial => 'layouts/login' %>
+	    <%= render :partial => 'layouts/main_nav' %>
 	  </div>
 	  <div class="clear"></div>
-    <div id="bd" class="grid_16 alpha omega">
-      <div id="block_out"></div>
-      <%= render :partial => 'layouts/main_nav' %>
-      <div class="main_content grid_16 alpha omega">
-        <div id="main_right" class="grid_10 omega relative">
+    <div id="bd" class="grid_16">
+        <div id="main_content" class="grid_11 alpha omega relative">
           <%= yield %>
         </div>
-        <div class="grid_6 alpha relative">
+        <div id="sidebar" class="grid_5 alpha omega relative">
           <%= yield :sidebar %>
         </div>
-      </div>
     </div>
     <div class="clear"></div>
-    <div id="ft" class="grid_16 alpha omega">
+    <div id="ft" class="">
     </div>
 	</div>
 </body>
