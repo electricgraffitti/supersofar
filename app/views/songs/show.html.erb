@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @song.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @song.description %>
+</p>
+
+<p>
+  <b>Permalink:</b>
+  <%=h @song.permalink %>
+</p>
+
+<p>
+  <b>Album:</b>
+  <%=h @song.album_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>

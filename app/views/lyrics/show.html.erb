@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @lyric.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @lyric.description %>
+</p>
+
+<p>
+  <b>Permalink:</b>
+  <%=h @lyric.permalink %>
+</p>
+
+<p>
+  <b>Song:</b>
+  <%=h @lyric.song_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_lyric_path(@lyric) %> |
+<%= link_to 'Back', lyrics_path %>
