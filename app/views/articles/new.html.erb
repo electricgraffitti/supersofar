@@ -1,23 +1,6 @@
-<h1>New article</h1>
-
-<% form_for(@article) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :permalink %><br />
-    <%= f.text_field :permalink %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', articles_path %>
+<div class="full_wrap">
+  <h1>New article</h1>
+  <%= render "form" %>
+  <%= link_to 'View All', articles_path %>
+  <%= link_to "Back", request.env["HTTP_REFERER"] %>
+</div>

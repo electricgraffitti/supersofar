@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
-
+    @article.assets.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @article }
@@ -38,6 +38,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @article.assets.build
   end
 
   # POST /articles

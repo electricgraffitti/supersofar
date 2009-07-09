@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090709023309) do
+ActiveRecord::Schema.define(:version => 20090709033409) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(:version => 20090709023309) do
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "author"
+  end
+
+  create_table "assets", :force => true do |t|
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "links", :force => true do |t|

@@ -1,0 +1,31 @@
+<% form_for(@article) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </p>
+  <p>
+    <% for asset in @article.assets %>
+    <% fields_for "document[attachments][]", asset do |asset_form|%>
+    <%= asset_form.label "Upload Article Image" %><br />
+    <%= asset_form.file_field :attachment, :size => 16 %>
+    <% end %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
