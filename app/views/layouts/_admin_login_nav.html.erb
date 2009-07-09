@@ -1,0 +1,9 @@
+<div id="admin_login_nav">
+  <ul>
+    <% if current_admin %>
+    <li><%= link_to "Logout", admin_logout_path %></li>
+    <% else %>
+    <li><%= link_to "Admin", admin_login_path %></li>
+    <% end %>
+  </ul>
+</div>

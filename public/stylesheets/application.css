@@ -234,7 +234,24 @@ ul#main_nav li a {
   height: 20px;
   color: #fff;
 }
-
+/**admin nav**/
+#admin_login_nav {
+  width: 35px;
+  float: right;
+  margin:20px;
+}
+#admin_login_nav li a {
+  color: #fff;
+}
+#ft_boiler_plate {
+  width: 350px;
+}
+#ft a {
+  color: #fff;
+}
+#ft a:hover {
+  color: #8e0000;
+}
 /*********************************************/
 /*******************MAIN CONTENT**************/
 #bd {
@@ -247,6 +264,7 @@ ul#main_nav li a {
   position: relative;
   width: 660px;
   margin: 0px;
+  color: #000;
 }
 .form_wrap {
   margin-left: 50px;
