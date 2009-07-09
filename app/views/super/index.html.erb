@@ -4,5 +4,5 @@
   <%= render :partial => 'shows/index_list' %>
 <% end %>
 <div>
-  <%= render :partial => "articles/index_list" %>
+  <%= render :partial => "articles/index_list", :locals => {:article => @article} %>
 </div>

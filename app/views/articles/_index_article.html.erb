@@ -1,0 +1,12 @@
+<div class="full_wrap">
+  <% article.assets.each do |asset|%>
+  <%= link_to image_tag(asset.attachment.url(:thumb), :alt => article.title, :class => "left image_wrap"), article_path(article) %>
+  <% end %>
+  <h2><%= article.title %></h2>
+  <span class="author_text">
+    <%= article.author_credentials %>
+  </span><br/>
+  <div class="description">
+    <%= truncate(article.description, :length => 250) %>
+  </div>
+</div>

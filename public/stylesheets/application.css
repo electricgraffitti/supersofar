@@ -269,6 +269,15 @@ ul#main_nav li a {
 .form_wrap {
   margin-left: 50px;
 }
+.author_text {
+  font-size: 80%;
+  color: #b78c09;
+}
+.image_wrap {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid #8e0000;
+}
 /*****************************************/
 /*******************SIDEBAR**************/
 #sidebar {

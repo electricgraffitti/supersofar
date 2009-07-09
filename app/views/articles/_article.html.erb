@@ -1,0 +1,12 @@
+<div class="full_wrap">
+  <% article.assets.each do |asset|%>
+  <%= image_tag(asset.attachment.url(:medium), :alt => article.title, :class => "right image_wrap") %>
+  <% end %>
+  <h2><%= article.title %></h2>
+  <span class="author_text">
+    <%= article.author_credentials %>
+  </span><br/>
+  <div class="description">
+    <%= article.description %>
+  </div>
+</div>

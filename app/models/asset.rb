@@ -26,5 +26,4 @@ class Asset < ActiveRecord::Base
   # Attrs
   attr_protected :attachment_file_name, :attachment_content_type, :attachment_file_size
   
-  
 end

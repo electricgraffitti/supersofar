@@ -15,7 +15,7 @@
 class Article < ActiveRecord::Base
   
   # Association
-  has_many :assets, :as => :attachable
+  has_many :assets, :as => :attachable, :dependent => :destroy
   
   # Validations
   validates_presence_of :title, :description, :permalink, :author
@@ -45,6 +45,14 @@ class Article < ActiveRecord::Base
     attachments.each do |attachment|
       assets.build(attachment)
     end
+  end
+  
+  def author_credentials
+    time = self.created_at
+    timestamp = time.strftime("%m/%d/%y at %I:%M%p")
+    author = self.author
+    credential = ("Posted on " + timestamp + " by " + author)
+    return credential
   end
   
 end

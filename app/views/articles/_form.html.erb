@@ -1,4 +1,4 @@
-<% form_for(@article) do |f| %>
+<% form_for(@article, :html => {:multipart => true} ) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -19,7 +19,7 @@
   </p>
   <p>
     <% for asset in @article.assets %>
-    <% fields_for "document[attachments][]", asset do |asset_form|%>
+    <% fields_for "article[attachments][]", asset do |asset_form|%>
     <%= asset_form.label "Upload Article Image" %><br />
     <%= asset_form.file_field :attachment, :size => 16 %>
     <% end %>
