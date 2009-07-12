@@ -1,0 +1,20 @@
+<div class="full_wrap">
+  <div class="photo_wrap">
+    <%= image_tag(photo.photo.url(:medium)) %>
+  </div>
+<div class="photo_content_wrap">
+  <p>
+    <h3>Caption: <%=h photo.title %></h3>
+    <span class="author_text">Uploaded by <%= photo.author %></span>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%= photo.description %>
+  </p>
+
+  <p>
+    <b>Photo album:</b>
+    <%= link_to @photo.photo_album.name, photo_album_path(@photo.photo_album) %>
+  </p></div>
+</div>

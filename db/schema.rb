@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090709033409) do
+ActiveRecord::Schema.define(:version => 20090711054515) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -72,6 +72,27 @@ ActiveRecord::Schema.define(:version => 20090709033409) do
     t.datetime "updated_at"
   end
 
+  create_table "photo_albums", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "permalink"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "photo_album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "permalink"
+    t.string   "author"
+  end
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -93,6 +114,11 @@ ActiveRecord::Schema.define(:version => 20090709033409) do
   create_table "shows", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "venue"
+    t.string   "address"
+    t.datetime "date"
+    t.string   "other_bands"
+    t.string   "ticket_price"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,0 +1,19 @@
+<% page_title("Supersofar Photos | " + @photo_album.name)%>
+
+<div class="full_wrap">
+  <h2>Supersofar Photo Album: <%=h @photo_album.name %></h2>
+</div>
+<div id="photo_album">
+<% @photo_album.photos.each do |photo| %>
+  <%= render :partial => "photos/photo_thumb", :locals => {:photo => photo} %>
+<% end %>
+</div>
+<div class="clear"></div>
+<div class="full_wrap">
+<% if current_admin %>
+<%= link_to 'Upload Photos', new_photo_path %> |
+<%= link_to 'Edit Album', edit_photo_album_path(@photo_album) %> |
+<%= link_to 'Delete Album', @photo_album, :confirm => 'All Photo will be deleted too. Are you sure?', :method => :delete %> |
+<% end %>
+<%= link_to 'Back', photo_albums_path %>
+</div>

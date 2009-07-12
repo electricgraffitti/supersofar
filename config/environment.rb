@@ -45,3 +45,6 @@ end
 require 'will_paginate'
 require 'hpricot'
 require 'RedCloth'
+
+# Custom Time View
+Time::DATE_FORMATS[:event_time] = "%A %B %d, at %I:%M %p"

@@ -1,3 +1,13 @@
-<div class="header">
-  <h2>Supersofar Upcoming Shows</h2>
+<div class="sidebar_container">
+  <div class="header_side">
+    <h2>Supersofar Upcoming Shows</h2>
+  </div>
+  <% @shows.each do |show| %>
+    <div class="sidebar_show_listing full_wrap round2">
+      <%= render :partial => "shows/show", :locals => {:show => show} %>
+    </div>
+  <% end %>
+  <div class="full_wrap">
+      <%= link_to "View All", shows_path, :class => "white" %>
+  </div>
 </div>

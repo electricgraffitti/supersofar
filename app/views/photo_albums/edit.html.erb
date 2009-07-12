@@ -1,0 +1,10 @@
+<div class="full_wrap">
+  <h1>Edit <%=h @photo_album.name %> Album</h1>
+  <%= render "form" %>
+  <%= link_to 'View Album', @photo_album %> |
+  <%= link_to 'View All', photo_albums_path %> |
+  <% if current_admin %>
+  <%= link_to 'Upload Photos', new_photo_path %>
+  <%= link_to 'Delete Album', @photo_album, :confirm => 'This will delete all photos. Are you sure?', :method => :delete %>
+  <% end %>
+</div>

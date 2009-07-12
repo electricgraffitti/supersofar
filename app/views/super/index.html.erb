@@ -1,8 +1,13 @@
 <% page_title("Salt Lake City | Pop Rock")%>
 
 <% content_for :sidebar do %>
-  <%= render :partial => 'shows/index_list' %>
+  <%= render :partial => 'shows/index_list', :locals => {:shows => @shows} %>
+  <%= render :partial => 'super/twitter_home_feed' %>
 <% end %>
 <div>
   <%= render :partial => "articles/index_list", :locals => {:article => @article} %>
+  <div class="header">
+    <h2>Supersofar Videos</h2>
+  </div>
+  <%= render :partial => "super/youtube_home_feed" %>
 </div>

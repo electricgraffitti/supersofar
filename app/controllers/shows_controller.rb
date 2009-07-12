@@ -1,4 +1,7 @@
 class ShowsController < ApplicationController
+  
+   before_filter :require_admin, :except => [:index, :show]
+  
   # GET /shows
   # GET /shows.xml
   def index

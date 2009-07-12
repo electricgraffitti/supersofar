@@ -1,0 +1,9 @@
+<h3><%= show.title %></h3>
+<p>
+  <%= show.description %>
+</p>
+<div><span class="bold">Venue:</span> <%= show.venue %></div>
+<div><span class="bold">Address:</span> <%= show.address %></div>
+<div><span class="bold">Date:</span> <%= show.date.to_s(:event_time) %></div>
+<div><span class="bold">Performing with:</span> <%= show.other_bands %></div>
+<div><span class="bold">Ticket Price:</span> <%= show.ticket_price %></div>

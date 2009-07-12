@@ -18,7 +18,7 @@ body {
   border-right: 1px solid #8e0000;*/
 }
 a {
-  color: #000;
+  color: #0000ff;
 }
 .hide_text {
   text-indent: -1000em;
@@ -68,27 +68,37 @@ h1 {
 }
 h2 {
   /*font-size: 153.9%;*/
-  font-size: 130.9%;
+  font-size: 160.9%;
 }
 .header {
   background: #000;
+}
+.header_side {
+  background: #d19b1d;
 }
 .header h2 {
   padding: 5px;
   color: #8e0000;
 }
+.header_side h2 {
+  padding: 5px;
+  color: #000;
+}
 h3 {
-  font-size: 118.5%;
+  font-size: 140.5%;
 }
 h4 {
-  font-size: 108%;
+  font-size: 120%;
 }
 h5 {
   
 }
 
 p {
-  margin: 5px 0px 0px;
+  margin: 5px;
+}
+.bold {
+  font-weight: bold;
 }
 /*img {
   margin: 0px 10px 10px 10px;
@@ -278,18 +288,50 @@ ul#main_nav li a {
   padding: 5px;
   border: 1px solid #8e0000;
 }
+.index_show {
+  background: #000;
+  padding: 10px;
+  color: #fff;
+}
+.photo_wrap {
+  padding: 5px 5px 5px 5px;
+  border: 1px solid #8e0000;
+  float: left;
+}
+.photo_content_wrap {
+  float: left;
+  margin-left: 10px;
+}
+.video_wrap {
+  background: #000;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.twitter_wrap {
+  width: 280px;
+  overflow: hidden;"
+}
 /*****************************************/
 /*******************SIDEBAR**************/
 #sidebar {
   position: relative;
-  background: #222;
-  width: 299px;
+  background: #8e0000;
+  width: 300px;
   margin: 0px;
   min-height: 900px;
-  border-left: 1px solid #8e0000;
+}
+.sidebar_show_listing {
+  background: #fff;
+  padding: 5px;
+  color: #000;
+}
+.sidebar_show_listing h3, .index_show h3 {
+  color: #8e0000;
 }
 /*****************************************/
-/*******************SIDEBAR**************/
+/*******************FOOTER**************/
 #ft {
   width: 960px;
   min-height: 100px;
