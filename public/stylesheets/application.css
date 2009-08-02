@@ -332,7 +332,8 @@ ul#main_nav li a {
 /*********************************************/
 /*******************MAIN CONTENT**************/
 #bd {
-  background: #8e0000;
+  background: #fff;
+/*  background: #8e0000;*/
   width: 960px;
   margin: 0px;
   position: relative;
