@@ -4,5 +4,7 @@ log/*.pid
 db/schema.sql
 .DS_Store
 public/songs/*
+
 public/album_covers/*
+
 .sqlite3
