@@ -13,7 +13,7 @@
 # across deployments. They'll be symlinked to the shared directory.
 :app_symlinks:
   - album_covers
-  - attachements
+  - attachments
   - songs
   - photos
 #
