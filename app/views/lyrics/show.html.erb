@@ -1,23 +1,11 @@
+<div class="full_wrap">
+  <h3><%= h @lyric.song.title %></h3>
 <p>
-  <b>Title:</b>
-  <%=h @lyric.title %>
+  <b>Lyrics:</b>
+  <%= @lyric.description %>
 </p>
-
-<p>
-  <b>Description:</b>
-  <%=h @lyric.description %>
-</p>
-
-<p>
-  <b>Permalink:</b>
-  <%=h @lyric.permalink %>
-</p>
-
-<p>
-  <b>Song:</b>
-  <%=h @lyric.song_id %>
-</p>
-
-
+<% if current_admin %>
 <%= link_to 'Edit', edit_lyric_path(@lyric) %> |
+<% end %>
 <%= link_to 'Back', lyrics_path %>
+</div>

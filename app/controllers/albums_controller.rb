@@ -1,8 +1,11 @@
 class AlbumsController < ApplicationController
+  
+  before_filter :require_admin, :except => [:index, :show]
+  
   # GET /albums
   # GET /albums.xml
   def index
-    @albums = Album.all
+    @albums = Album.last_created
 
     respond_to do |format|
       format.html # index.html.erb

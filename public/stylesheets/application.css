@@ -201,6 +201,73 @@ a {
 a:active {
   outline: none;
 }
+/******************************************/
+/*******************ERRORS*****************/
+#flash {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  left: 42%;
+  padding: 20px;
+  width: 250px;
+  background: #db0404;
+  font-size: 175%;
+  z-index: 100;
+}
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  position: absolute;
+  top: -180px;
+  left: 0%;
+  width: 100%;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 125%;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/******JS Form Errors********/
+input.error, textarea.error {
+  border:2px solid #DB0404;
+  margin:0px;
+  padding:1px;
+}
+label.error {
+  background:#FFFFFF none repeat scroll 0 0;
+  color:#DB0404;
+  font-size:85%;
+  font-weight:bold;
+  margin-left:35px;
+  margin-top:3px;
+  padding:0;
+  position:absolute;
+}
 /*********************************************/
 /*******************HEADER********************/
 #hd {
@@ -265,16 +332,19 @@ ul#main_nav li a {
 /*********************************************/
 /*******************MAIN CONTENT**************/
 #bd {
+  background: #8e0000;
   width: 960px;
   margin: 0px;
   position: relative;
   min-height: 850px;
 }
 #main_content {
+  background: #fff;
   position: relative;
   width: 660px;
   margin: 0px;
   color: #000;
+  min-height: 700px;
 }
 .form_wrap {
   margin-left: 50px;
@@ -344,6 +414,9 @@ input {
   background: #fff;
   padding: 2px;
 }
+input.short_input {
+  width: 20px;
+}
 /*********************************************/
 /*******************BUTTONS*******************/
 .btn {
@@ -364,4 +437,34 @@ input {
   background: #efefef;
   color: #000;
   border: 1px solid #000; 
+}
+/********************************************/
+/**************Twitter**********************/
+#twitter_feed {
+  font-size: 100%;
+  color: #085258; 
+}
+#twitter_feed .tweet_list {
+  -webkit-border-radius: .5em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #8ADEE2; 
+}
+#twitter_feed .tweet_list li {
+  overflow: auto;
+  padding: .5em; 
+}
+#twitter_feed .tweet_list li a {
+    color: #0C717A; }
+#twitter_feed .tweet_list .tweet_even {
+  background-color: #000; }
+#twitter_feed .tweet_list .tweet_avatar {
+  padding-right: .5em;
+  float: left;
+}
+#twitter_feed .tweet_list .tweet_avatar img {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
 }

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090711054515) do
+ActiveRecord::Schema.define(:version => 20090712153616) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(:version => 20090711054515) do
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   create_table "articles", :force => true do |t|
@@ -64,7 +68,6 @@ ActiveRecord::Schema.define(:version => 20090711054515) do
   end
 
   create_table "lyrics", :force => true do |t|
-    t.string   "title"
     t.text     "description"
     t.string   "permalink"
     t.integer  "song_id"
@@ -82,15 +85,15 @@ ActiveRecord::Schema.define(:version => 20090711054515) do
   create_table "photos", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "author"
     t.integer  "photo_album_id"
+    t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "permalink"
-    t.string   "author"
   end
 
   create_table "posts", :force => true do |t|
@@ -125,12 +128,19 @@ ActiveRecord::Schema.define(:version => 20090711054515) do
   end
 
   create_table "songs", :force => true do |t|
+    t.integer  "album_id"
+    t.string   "track_number"
     t.string   "title"
     t.text     "description"
     t.string   "permalink"
-    t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "song_file_name"
+    t.string   "song_content_type"
+    t.integer  "song_file_size"
+    t.datetime "song_updated_at"
+    t.boolean  "active"
+    t.boolean  "downloadable"
   end
 
 end

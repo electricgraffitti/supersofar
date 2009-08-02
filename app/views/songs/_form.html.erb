@@ -1,0 +1,53 @@
+<% form_for(@song, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+<div class="grid_6 alpha omega">
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label "Select An Album" %><br />
+    <%= collection_select(:song, :album_id, @albums, :id, :title) %> or <%= link_to "Create a New Album", new_album_path %>
+  </p>
+  <p>
+    <%= f.label :song, "Browse for Song" %><br/>
+    <%= f.file_field :song, :size => 16 %>
+  </p>
+  <p>
+    <%= f.label :track_number %><br />
+    <%= f.text_field :track_number, :class => "short_input" %>
+  </p>
+  <p>
+    <%= f.check_box :active %>
+    <%= f.label "Make Song Active in Player" %>
+  </p>
+  <p>
+     <%= f.check_box :downloadable %>
+     <%= f.label "Make Song Downloadable" %>
+   </p>
+  <p>
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </p>
+</div>
+<div class="grid_4 alpha">
+  <% f.fields_for :lyrics do |lyric_form| %>
+    <p>
+      <%= lyric_form.label :description, "Lyrics" %><br />
+      <%= lyric_form.text_area :description, :rows => 12, :cols => 40 %>
+    </p>
+    <p>
+      <%= lyric_form.label :permalink %><br />
+      <%= lyric_form.text_field :permalink %>
+    </p>
+  <% end %>
+</div>
+<div class="clear"></div>
+  <p>
+    <%= f.submit 'Submit'%>
+  </p>
+<% end %>

@@ -1,24 +1,29 @@
-<h1>Listing albums</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Permalink</th>
-  </tr>
-
+<% page_title("Supersofar Discography ")%>
+<div class="header">
+  <h2>Supersofar Discography</h2>
+</div>
 <% @albums.each do |album| %>
-  <tr>
-    <td><%=h album.title %></td>
-    <td><%=h album.description %></td>
-    <td><%=h album.permalink %></td>
-    <td><%= link_to 'Show', album %></td>
-    <td><%= link_to 'Edit', edit_album_path(album) %></td>
-    <td><%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div class="full_wrap">
+<%= image_tag(album.cover.url(:small), :alt => album.title, :class => "left image_wrap")%>
+    <h3><%=h album.title %></h3>
+    <p><%= album.description %></p>
+    <div class="album_tracks full_wrap">
+      <ul>
+    <% album.songs.each do |song|%>
+    <li>
+      <%= h song.track_number %> - <%= h song.title %> - <%= link_to "Lyrics", lyric_path(song.lyrics) %>
+    </li>
+    <% end %>
+    </ul>
+    </div>
+    <% if current_admin %>
+    <div class="right">
+    <%= link_to 'Upload Songs', new_song_path %> |
+    <%= link_to 'New Album', new_album_path %> |
+    <%= link_to 'Edit Album', edit_album_path(album) %> |
+    <%= link_to 'Delete', album, :confirm => 'All Songs will be deleted too. Are you sure?', :method => :delete %>
+    </div>
+    <% end %>
+</div>
+<div class="clear"></div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New album', new_album_path %>

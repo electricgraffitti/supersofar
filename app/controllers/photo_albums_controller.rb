@@ -1,4 +1,7 @@
 class PhotoAlbumsController < ApplicationController
+  
+  before_filter :require_admin, :except => [:index, :show]
+  
   # GET /photo_albums
   # GET /photo_albums.xml
   def index

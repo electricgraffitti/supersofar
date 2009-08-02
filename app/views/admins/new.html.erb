@@ -1,3 +1,3 @@
 <div class="full_wrap"><h1>New Admin</h1>
 <%= render 'form', :locals => {:admin => @admin} %>
-<%= link_to "Back", request.env["HTTP_REFERER"] %></div>
+<%= link_to "Back", request.env["HTTP_REFERER"], :class => "btn" %></div>

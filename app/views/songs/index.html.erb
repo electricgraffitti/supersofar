@@ -1,26 +1,15 @@
-<h1>Listing songs</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Permalink</th>
-    <th>Album</th>
-  </tr>
-
+<div class="full_wrap">
+  <h1>Available Songs</h1>
+  <p>
+    <%= link_to 'New song', new_song_path %>
+  </p>
+<ul>
 <% @songs.each do |song| %>
-  <tr>
-    <td><%=h song.title %></td>
-    <td><%=h song.description %></td>
-    <td><%=h song.permalink %></td>
-    <td><%=h song.album_id %></td>
-    <td><%= link_to 'Show', song %></td>
-    <td><%= link_to 'Edit', edit_song_path(song) %></td>
-    <td><%= link_to 'Destroy', song, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li>
+  <b>Song:</b> <%=h song.title %> | <b>Album:</b> <%=h song.album.title %> | <% if song.active? %> <b>Active: </b>true | <% end %><% if song.downloadable? %> <b>Downloadable: </b>true | <% end %>
+      <%= link_to 'Edit', edit_song_path(song) %> |
+      <%= link_to 'Delete', song, :confirm => 'This will delete the lyrics as well. Are you sure?', :method => :delete %>
+  </li>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New song', new_song_path %>
+</ul>
+</div>

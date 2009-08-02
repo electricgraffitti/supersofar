@@ -7,12 +7,12 @@ $(document).ready(function() {
               join_text: "auto",
               avatar_size: 32,
               count: 4,
-              auto_join_text_default: "we said,",
-              auto_join_text_ed: "we",
-              auto_join_text_ing: "we were",
-              auto_join_text_reply: "we replied to",
-              auto_join_text_url: "we were checking out",
-              loading_text: "loading super tweets..."
+              auto_join_text_default: "Supersofar said,",
+              auto_join_text_ed: "Supersofar",
+              auto_join_text_ing: "Supersofar was",
+              auto_join_text_reply: "Supersofar replied to",
+              auto_join_text_url: "Supersofar was checking out",
+              loading_text: "loading Super tweets..."
           });
 });
 

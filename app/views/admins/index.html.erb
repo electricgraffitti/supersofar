@@ -1,6 +1,42 @@
 <div class="full_wrap">
   <h2>Admin Dashboard</h2>
+  <div class="grid_3">
+    <h4>News Articles</h4>
   <p>
-    <%= link_to "Upload Photos", new_photo_path %>
+    <%= link_to "New Article", new_article_path %>
   </p>
+  </div>
+  <div class="grid_3">
+    <h4>Blog Posts</h4>
+  <p>
+    <%= link_to "New Blog Post", new_blog_path %>
+  </p>
+  </div>
+  <div class="grid_3">
+    <h4>Music</h4>
+    <p>
+      <%= link_to "New Album", new_album_path %>
+    </p>
+    <p>
+      <%= link_to "Upload Songs", new_song_path %>
+    </p>
+    <p>
+      <%= link_to "Song List", songs_path %>
+    </p>
+  </div>
+  <div class="grid_3">
+    <h4>Photos</h4>
+    <p>
+      <%= link_to "New Photo Album", new_photo_album_path %>
+    </p>
+    <p>
+      <%= link_to "Upload Photos", new_photo_path %>
+    </p>
+  </div>
+  <div class="grid_3">
+    <h4>Links</h4>
+    <p>
+      <%= link_to "New Link", new_link_path %>
+    </p>
+  </div>
 </div>
