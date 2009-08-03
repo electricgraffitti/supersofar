@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
   
   before_filter :require_admin, :except => [:new, :create];
-  before_filter :auth_super, :only => [:new, :create];
+  before_filter :auth_super, :only => [:new];
   
   # GET /admins
   # GET /admins.xml
@@ -34,7 +34,7 @@ class AdminsController < ApplicationController
     respond_to do |format|
       if @admin.save
         flash[:notice] = 'Admin was successfully created.'
-        format.html { admins_path }
+        format.html { admin_login_path }
         format.xml  { render :xml => @admin, :status => :created, :location => @admin }
       else
         format.html { render :action => "new" }

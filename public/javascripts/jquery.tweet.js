@@ -2,9 +2,9 @@
  
   $.fn.tweet = function(o){
     var s = {
-      username: ["supersofar"],              // [string]   required, unless you want to display our tweets. :) it can be an array, just do ["username1","username2","etc"]
-      avatar_size: null,                      // [integer]  height and width of avatar if displayed (48px max)
-      count: 3,                               // [integer]  how many tweets to display?
+      username: ["Supersofar"],              // [string]   required, unless you want to display our tweets. :) it can be an array, just do ["username1","username2","etc"]
+      avatar_size: 25,                      // [integer]  height and width of avatar if displayed (48px max)
+      count: 4,                               // [integer]  how many tweets to display?
       intro_text: null,                       // [string]   do you want text BEFORE your your tweets?
       outro_text: null,                       // [string]   do you want text AFTER your tweets?
       join_text:  null,                       // [string]   optional text in between date and tweet, try setting to "auto"

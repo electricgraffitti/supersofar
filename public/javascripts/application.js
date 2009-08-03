@@ -2,8 +2,8 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function() {
-  $("#twitter_feed").tweet({
-              username: "supersofar",
+  $(".twitter_feed").tweet({
+              username: "Supersofar",
               join_text: "auto",
               avatar_size: 32,
               count: 4,
@@ -19,5 +19,4 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $("#photo_album img").reflect();
-  
 });
