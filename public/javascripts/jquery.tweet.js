@@ -1,145 +1,104 @@
 (function($) {
- 
-  $.fn.tweet = function(o){
-    var s = {
-      username: ["Supersofar"],              // [string]   required, unless you want to display our tweets. :) it can be an array, just do ["username1","username2","etc"]
-      avatar_size: 25,                      // [integer]  height and width of avatar if displayed (48px max)
-      count: 4,                               // [integer]  how many tweets to display?
-      intro_text: null,                       // [string]   do you want text BEFORE your your tweets?
-      outro_text: null,                       // [string]   do you want text AFTER your tweets?
-      join_text:  null,                       // [string]   optional text in between date and tweet, try setting to "auto"
-      auto_join_text_default: "i said,",      // [string]   auto text for non verb: "i said" bullocks
-      auto_join_text_ed: "i",                 // [string]   auto text for past tense: "i" surfed
-      auto_join_text_ing: "i am",             // [string]   auto tense for present tense: "i was" surfing
-      auto_join_text_reply: "i replied to",   // [string]   auto tense for replies: "i replied to" @someone "with"
-      auto_join_text_url: "i was looking at", // [string]   auto tense for urls: "i was looking at" http:...
-      loading_text: null,                     // [string]   optional loading text, displayed while tweets load
-      query: null                             // [string]   optional search query
-    };
+	/*
+		jquery.twitter.js v1.5
+		Last updated: 08 July 2009
 
-    $.fn.extend({
-      linkUrl: function() {
-        var returning = [];
-        var regexp = /((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi;
-        this.each(function() {
-          returning.push(this.replace(regexp,"<a href=\"$1\">$1</a>"))
-        });
-        return $(returning);
-      },
-      linkUser: function() {
-        var returning = [];
-        var regexp = /[\@]+([A-Za-z0-9-_]+)/gi;
-        this.each(function() {
-          returning.push(this.replace(regexp,"<a href=\"http://twitter.com/$1\">@$1</a>"))
-        });
-        return $(returning);
-      },
-      linkHash: function() {
-        var returning = [];
-        var regexp = / [\#]+([A-Za-z0-9-_]+)/gi;
-        this.each(function() {
-          returning.push(this.replace(regexp, ' <a href="http://search.twitter.com/search?q=&tag=$1&lang=all&from='+s.username.join("%2BOR%2B")+'">#$1</a>'))
-        });
-        return $(returning);
-      },
-      capAwesome: function() {
-        var returning = [];
-        this.each(function() {
-          returning.push(this.replace(/(a|A)wesome/gi, 'AWESOME'))
-        });
-        return $(returning);
-      },
-      capEpic: function() {
-        var returning = [];
-        this.each(function() {
-          returning.push(this.replace(/(e|E)pic/gi, 'EPIC'))
-        });
-        return $(returning);
-      },
-      makeHeart: function() {
-        var returning = [];
-        this.each(function() {
-          returning.push(this.replace(/[&lt;]+[3]/gi, "<tt class='heart'>&#x2665;</tt>"))
-        });
-        return $(returning);
-      }
-    });
+		Created by Damien du Toit
+		http://coda.co.za/blog/2008/10/26/jquery-plugin-for-twitter
 
-    function relative_time(time_value) {
-      var parsed_date = Date.parse(time_value);
-      var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
-      var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
-      if(delta < 60) {
-      return 'less than a minute ago';
-      } else if(delta < 120) {
-      return 'about a minute ago';
-      } else if(delta < (45*60)) {
-      return (parseInt(delta / 60)).toString() + ' minutes ago';
-      } else if(delta < (90*60)) {
-      return 'about an hour ago';
-      } else if(delta < (24*60*60)) {
-      return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
-      } else if(delta < (48*60*60)) {
-      return '1 day ago';
-      } else {
-      return (parseInt(delta / 86400)).toString() + ' days ago';
-      }
-    }
+		Licensed under a Creative Commons Attribution-Non-Commercial 3.0 Unported License
+		http://creativecommons.org/licenses/by-nc/3.0/
+	*/
 
-    if(o) $.extend(s, o);
-    return this.each(function(){
-      var list = $('<ul class="tweet_list">').appendTo(this);
-      var intro = '<p class="tweet_intro">'+s.intro_text+'</p>'
-      var outro = '<p class="tweet_outro">'+s.outro_text+'</p>'
-      var loading = $('<p class="loading">'+s.loading_text+'</p>');
-      if(typeof(s.username) == "string"){
-        s.username = [s.username];
-      }
-      var query = '';
-      if(s.query) {
-        query += 'q='+s.query;
-      }
-      query += '&q=from:'+s.username.join('%20OR%20from:');
-      var url = 'http://search.twitter.com/search.json?&'+query+'&rpp='+s.count+'&callback=?';
-      if (s.loading_text) $(this).append(loading);
-      $.getJSON(url, function(data){
-        if (s.loading_text) loading.remove();
-        if (s.intro_text) list.before(intro);
-        $.each(data.results, function(i,item){
-          // auto join text based on verb tense and content
-          if (s.join_text == "auto") {
-            if (item.text.match(/^(@([A-Za-z0-9-_]+)) .*/i)) {
-              var join_text = s.auto_join_text_reply;
-            } else if (item.text.match(/(^\w+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&\?\/.=]+) .*/i)) {
-              var join_text = s.auto_join_text_url;
-            } else if (item.text.match(/^((\w+ed)|just) .*/im)) {
-              var join_text = s.auto_join_text_ed;
-            } else if (item.text.match(/^(\w*ing) .*/i)) {
-              var join_text = s.auto_join_text_ing;
-            } else {
-              var join_text = s.auto_join_text_default;
-            }
-          } else {
-            var join_text = s.join_text;
-          };
+	$.fn.getTwitter = function(options) {
 
-          var join_template = '<span class="tweet_join"> '+join_text+' </span>';
-          var join = ((s.join_text) ? join_template : ' ')
-          var avatar_template = '<a class="tweet_avatar" href="http://twitter.com/'+ item.from_user+'"><img src="'+item.profile_image_url+'" height="'+s.avatar_size+'" width="'+s.avatar_size+'" alt="'+item.from_user+'\'s avatar" border="1"/></a>';
-          var avatar = (s.avatar_size ? avatar_template : '')
-          var date = '<a href="http://twitter.com/'+item.from_user+'/statuses/'+item.id+'" title="view tweet on twitter">'+relative_time(item.created_at)+'</a><br/>';
-          var text = '<span class="tweet_text">' +$([item.text]).linkUrl().linkUser().linkHash().makeHeart().capAwesome().capEpic()[0]+ '</span>';
-          
-          // until we create a template option, arrange the items below to alter a tweet's display.
-          list.append('<li>' + avatar + date + join + text + '</li>');
+		$.fn.getTwitter.defaults = {
+			userName: 'supersofar',
+			numTweets: 5,
+			loaderText: "Loading tweets...",
+			slideIn: true,
+			slideDuration: 750,
+			showHeading: true,
+			headingText: "Latest Tweets",
+			showProfileLink: true,
+			showTimestamp: true
+		};
 
-          list.children('li:first').addClass('tweet_first');
-          list.children('li:odd').addClass('tweet_even');
-          list.children('li:even').addClass('tweet_odd');
-        });
-        if (s.outro_text) list.after(outro);
-      });
+		var o = $.extend({}, $.fn.getTwitter.defaults, options);
 
-    });
-  };
+		return this.each(function() {
+			var c = $(this);
+
+			// hide container element, remove alternative content, and add class
+			c.hide().empty().addClass("twitted");
+
+			// add heading to container element
+			if (o.showHeading) {
+				c.append("<h2>"+o.headingText+"</h2>");
+			}
+
+			// add twitter list to container element
+			var twitterListHTML = "<ul id=\"twitter_update_list\"><li></li></ul>";
+			c.append(twitterListHTML);
+
+			var tl = $("#twitter_feed");
+
+			// hide twitter list
+			tl.hide();
+
+			// add preLoader to container element
+			var preLoaderHTML = $("<p class=\"preLoader\">"+o.loaderText+"</p>");
+			c.append(preLoaderHTML);
+
+			// add Twitter profile link to container element
+			if (o.showProfileLink) {
+				var profileLinkHTML = "<p class=\"profileLink\"><a href=\"http://twitter.com/"+o.userName+"\">http://twitter.com/"+o.userName+"</a></p>";
+				c.append(profileLinkHTML);
+			}
+
+			// show container element
+			c.show();
+
+			$.getScript("http://twitter.com/javascripts/blogger.js");
+			$.getScript("http://twitter.com/statuses/user_timeline/"+o.userName+".json?callback=twitterCallback2&count="+o.numTweets, function() {
+				// remove preLoader from container element
+				$(preLoaderHTML).remove();
+
+				// remove timestamp and move to title of list item
+				if (!o.showTimestamp) {
+					tl.find("li").each(function() {
+						var timestampHTML = $(this).children("a");
+						var timestamp = timestampHTML.html();
+						timestampHTML.remove();
+						$(this).attr("title", timestamp);
+					});
+				}
+
+				// show twitter list
+				if (o.slideIn) {
+					// a fix for the jQuery slide effect
+					// Hat-tip: http://blog.pengoworks.com/index.cfm/2009/4/21/Fixing-jQuerys-slideDown-effect-ie-Jumpy-Animation
+					var tlHeight = tl.data("originalHeight");
+
+					// get the original height
+					if (!tlHeight) {
+						tlHeight = tl.show().height();
+						tl.data("originalHeight", tlHeight);
+						tl.hide().css({height: 0});
+					}
+
+					tl.show().animate({height: tlHeight}, o.slideDuration);
+				}
+				else {
+					tl.show();
+				}
+
+				// add unique class to first list item
+				tl.find("li:first").addClass("firstTweet");
+
+				// add unique class to last list item
+				tl.find("li:last").addClass("lastTweet");
+			});
+		});
+	};
 })(jQuery);
