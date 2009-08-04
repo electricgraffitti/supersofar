@@ -1,17 +1,4 @@
-<p>
-  <b>Title:</b>
-  <%=h @post.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%=h @post.description %>
-</p>
-
-<p>
-  <b>Permalink:</b>
-  <%=h @post.permalink %>
-</p>
+<%= render @post %>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

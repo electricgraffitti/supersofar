@@ -10,6 +10,8 @@ class ShowsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @shows }
+      format.atom
+      format.rss
     end
   end
 
