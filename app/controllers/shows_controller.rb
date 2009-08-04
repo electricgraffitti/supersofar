@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @shows }
       format.atom
-      format.rss
+      format.rss { render :rss => @shows }
     end
   end
 

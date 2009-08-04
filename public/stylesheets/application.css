@@ -79,6 +79,8 @@ h2 {
 .header h2 {
   padding: 5px;
   color: #8e0000;
+  position: relative;
+  width: 70%;
 }
 .header_side h2 {
   padding: 5px;
@@ -438,6 +440,14 @@ input.short_input {
   background: #efefef;
   color: #000;
   border: 1px solid #000; 
+}
+.rss_link {
+  width: 28px;
+  height: 28px;
+  display: block;
+  text-indent: -3000em;
+  background: transparent url('../images/feed.png') no-repeat;
+  margin: 3px
 }
 /********************************************/
 /**************Twitter**********************/

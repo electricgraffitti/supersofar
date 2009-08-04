@@ -5,8 +5,9 @@ class PostsController < ApplicationController
     @posts = Post.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {redirect_to blog_path}
       format.xml  { render :xml => @posts }
+      format.rss { render :rss => @posts }
     end
   end
 
