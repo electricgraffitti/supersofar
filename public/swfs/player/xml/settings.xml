@@ -3,7 +3,7 @@
 
     <background_color color="0x201f1f"/>
 	
-	<scroll_large_background beginColor="0xeeeeee" endColor="0xeeeeee" height="35" strokeColor="0x8c8c8c"/>
+	<scroll_large_background beginColor="0x444444" endColor="0xeeeeee" height="35" strokeColor="0x8c8c8c"/>
 	
 	<scroll_button_color beginColor="0xa90329" endColor="0x6d0019" height="10"/>
 	
@@ -13,7 +13,7 @@
 	
 	<player_margin size="4"/>
 	
-	<images_border size="4" color="0xC6C6C6" rollOver="0x76001b"/>
+	<images_border size="2" color="0xC6C6C6" rollOver="0x76001b"/>
 	
 	<reflection size="3" alpha="25"/>
 	
@@ -71,9 +71,9 @@
 	
 	<autoslide_pause_at_margins value="1"/>
 	
-	<player_size width="560" height="306"/>
+	<player_size width="660" height="306"/>
 	
-	<sound_volume value="50"/>
+	<sound_volume value="70"/>
 	
 	<image_size width="140" height="200"/>
 	
