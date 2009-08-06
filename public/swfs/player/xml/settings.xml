@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
 
-    <background_color color="0xff0000"/>
+    <background_color color="0x201f1f"/>
 	
 	<scroll_large_background beginColor="0xeeeeee" endColor="0xeeeeee" height="35" strokeColor="0x8c8c8c"/>
 	
@@ -13,19 +13,19 @@
 	
 	<player_margin size="4"/>
 	
-	<images_border size="4" color="0xff0000" rollOver="0x76001b"/>
+	<images_border size="4" color="0xC6C6C6" rollOver="0x76001b"/>
 	
 	<reflection size="3" alpha="25"/>
 	
 	<playlist_background beginColor="0x2e2b2b" endColor="0x1e1c1c"/>
 	
-	<albums_autoscrolling_speed value="0.1"/>
+	<albums_autoscrolling_speed value="0.3"/>
 	
 	<scroll_bar_controls lineColor="0xffffff" beginColor="0xa90329" endColor="0x6d0019"/>
 	
-	<automatic_scroll value="false"/>
+	<automatic_scroll value="true"/>
 	
-	<album_image backgroundHeight="50" albumTitleHeight="16" authorBackgroundBeginColor="0xaD19B1D" authorBackgroundEndColor="0x6d0019" authorBackgroundStrokeColor="0x4e0314" albumBackgroundColor="0x76001b" albumBackgroundStrokeColor="0x69051c" authorNameColor="0xffffff" albumNameColor="0xcd4444" infoColor="0xffffff" infoRollOverColor="0x69051c" arrowColor="0xffffff" arrowBackgroundColor="0x76001b" arrowOverColor="0xcd4444"/>
+	<album_image backgroundHeight="50" albumTitleHeight="16" authorBackgroundBeginColor="0xa90329" authorBackgroundEndColor="0x6d0019" authorBackgroundStrokeColor="0x4e0314" albumBackgroundColor="0x76001b" albumBackgroundStrokeColor="0x69051c" authorNameColor="0xffffff" albumNameColor="0xcd4444" infoColor="0xffffff" infoRollOverColor="0x69051c" arrowColor="0xffffff" arrowBackgroundColor="0x76001b" arrowOverColor="0xcd4444"/>
 	
 	<back_to_albums backText="BACK TO ALBUMS" backgroundHeight="45" backgroundBeginColor="0xa70329" backgroundEndColor="0x6f0019" backgroundStrokeColor="0x4e0314" textColor="0xffffff" shapeColor="0xffffff" textOverColor="0xcd4444" album_song_changeTime="10"/>
 	
@@ -49,9 +49,9 @@
 		<shuffle color="0x000000" overColor="0xa20327"/>
 	</controls_bar>
 	
-	<player_reflections value="false"/>
+	<player_reflections value="true"/>
 	
-	<bottom_background beginColor="0xD19B1D" endColor="0x2e2b2b"/>
+	<bottom_background beginColor="0x1f1d1d" endColor="0x2e2b2b"/>
 	
 	<distance_between_images value="25"/>
 	
@@ -61,7 +61,7 @@
 	
 	<albums_over_stop_moving value="false"/>
 	
-	<playlist_looping value="false"/>
+	<playlist_looping value="true"/>
 	
 	<notused value=""/>
 	
@@ -75,13 +75,13 @@
 	
 	<sound_volume value="50"/>
 	
-	<image_size width="200" height="200"/>
+	<image_size width="140" height="200"/>
 	
 	<automatically_begin_playlist value="false" albumIndex="1"/>
 	
 	<auto_shuffle value="false"/>
 	
-	<start_playlist_playing_automatically value="false"/>
+	<start_playlist_playing_automatically value="true"/>
 	
 	<links_target value="_blank"/>
 	
