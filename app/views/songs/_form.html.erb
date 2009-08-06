@@ -29,9 +29,29 @@
      <%= f.check_box :downloadable %>
      <%= f.label "Make Song Downloadable" %>
    </p>
+   <p>
+      <%= f.check_box :buy %>
+      <%= f.label "Make Buy Link Active" %>
+    </p>
   <p>
-    <%= f.label :permalink %><br />
+    <%= f.label :permalink, "Permalink (supersofar-album-song)" %><br />
     <%= f.text_field :permalink %>
+  </p>
+  <p>
+    <%= f.label :itunes_link %><br />
+    <%= f.text_field :itunes_link %>
+  </p>
+  <p>
+    <%= f.label :cd_baby_link %><br />
+    <%= f.text_field :cd_baby_link %>
+  </p>
+  <p>
+    <%= f.label :rhapsody_link %><br />
+    <%= f.text_field :rhapsody_link %>
+  </p>
+  <p>
+    <%= f.label :amazon_link %><br />
+    <%= f.text_field :amazon_link %>
   </p>
 </div>
 <div class="grid_4 alpha">
@@ -41,7 +61,7 @@
       <%= lyric_form.text_area :description, :rows => 12, :cols => 40 %>
     </p>
     <p>
-      <%= lyric_form.label :permalink %><br />
+      <%= lyric_form.label :permalink, "Permalink (supersofar-album-song-lyrics)" %><br />
       <%= lyric_form.text_field :permalink %>
     </p>
   <% end %>

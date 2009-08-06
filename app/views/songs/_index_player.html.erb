@@ -1,0 +1,32 @@
+<div class="header">
+  <h2>Supersofar Music</h2>
+</div>
+
+<script>
+  var stageW = 660;
+  var stageH = 306; 
+  var cacheBuster = Date.parse(new Date());
+
+  var flashvars = {};
+  var params = {};
+
+  params.bgcolor = "#000000";
+  params.allowfullscreen = "true";
+
+  flashvars.stageW = stageW;
+  flashvars.stageH = stageH;
+
+  flashvars.pathToFiles = '';
+
+  flashvars.settingsPath = "swfs/player/xml/settings.xml";
+  flashvars.xmlPath = "<%= albums_url(:xml) %>";
+
+  flashvars.imageWidth = "200";
+  flashvars.imageHeight = "200";
+
+  swfobject.embedSWF("swfs/preview.swf?t="+cacheBuster, "player", stageW, stageH, "9.0.124", "/swfs/js/expressInstall.swf", flashvars, params);
+  
+</script>
+<div id="player">
+
+</div>

@@ -9,7 +9,8 @@ class AlbumsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @albums }
+      format.xml
+      format.rss
     end
   end
 

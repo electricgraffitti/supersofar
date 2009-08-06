@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<featureset>
+    <album name="Shock Value" author="Timbaland" imageUrl="images/Timbaland/image.jpg" link="http://flabell.com/">
+    	<song name="Oh Timbaland" duration="3 : 31" buy="false" download="true" buyLink="http://www.flabell.com/" downloadSource="player/download/song1.mp3">songs/song1.mp3</song>
+	</album>	
+</featureset>
+
+<featureset>
+  <album link="" author="Supersofar" imageUrl="/album_covers/5/medium_SSF-Drama-Club-Album-Cover.jpg?1247400296" name="The Drama Club">
+    <song buyLink="" downloadSource="/songs/2/original_Better-Late-Than_All.mp3" duration="3 : 31" name="Better Late Than All" buy="" download="true">/songs/2/original_Better-Late-Than_All.mp3</song>
+    <song buyLink="" downloadSource="/songs/6/original_11_Call_Me.mp3" duration="3 : 31" name="test" buy="true" download="true">/songs/6/original_11_Call_Me.mp3</song>
+</album>
+
+
+
+
+

@@ -7,4 +7,5 @@ public/songs/*
 public/photos/*
 public/album_covers/*
 public/attachments/*
+app/mp3s/*
 .sqlite3

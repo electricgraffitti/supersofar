@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+
+    <background_color color="0xff0000"/>
+	
+	<scroll_large_background beginColor="0xeeeeee" endColor="0xeeeeee" height="35" strokeColor="0x8c8c8c"/>
+	
+	<scroll_button_color beginColor="0xa90329" endColor="0x6d0019" height="10"/>
+	
+	<scroll_background_color beginColor="0xd7d7d7" middleColor="0xeae9e8" endColor="0xeae9e8" height="10" strokeColor="0xd0cfcd"/>
+	
+	<top_margin size="30"/>
+	
+	<player_margin size="4"/>
+	
+	<images_border size="4" color="0xff0000" rollOver="0x76001b"/>
+	
+	<reflection size="3" alpha="25"/>
+	
+	<playlist_background beginColor="0x2e2b2b" endColor="0x1e1c1c"/>
+	
+	<albums_autoscrolling_speed value="0.1"/>
+	
+	<scroll_bar_controls lineColor="0xffffff" beginColor="0xa90329" endColor="0x6d0019"/>
+	
+	<automatic_scroll value="false"/>
+	
+	<album_image backgroundHeight="50" albumTitleHeight="16" authorBackgroundBeginColor="0xaD19B1D" authorBackgroundEndColor="0x6d0019" authorBackgroundStrokeColor="0x4e0314" albumBackgroundColor="0x76001b" albumBackgroundStrokeColor="0x69051c" authorNameColor="0xffffff" albumNameColor="0xcd4444" infoColor="0xffffff" infoRollOverColor="0x69051c" arrowColor="0xffffff" arrowBackgroundColor="0x76001b" arrowOverColor="0xcd4444"/>
+	
+	<back_to_albums backText="BACK TO ALBUMS" backgroundHeight="45" backgroundBeginColor="0xa70329" backgroundEndColor="0x6f0019" backgroundStrokeColor="0x4e0314" textColor="0xffffff" shapeColor="0xffffff" textOverColor="0xcd4444" album_song_changeTime="10"/>
+	
+	<playlist backgroundColor="0xffffff" backgroundStrokeColor="0xeae9e9">
+		<button_normal beginColor="0xffffff" endColor="0xf5f5f4" textColor="0x7d7d7d" oddNodeColor="0xf2f2f1" strokeColor="0xeae9e9"/>	
+		<button_over color="0x6e6e6e" strokeColor="0xffffff" textColor="0xffffff"/>
+		<button_pressed beginColor="0xa90329" endColor="0x6d0019" strokeColor="0xffffff" textColor="0xffffff"/>
+	</playlist>
+	
+	<controls_bar beginColor="0xffffff" endColor="0xe8e7e6" strokeColor="0xbec0c1" height="35">
+		<time_bar beginColor="0xa90329" endColor="0x6d0019"/>
+		<time_bar_background beginColor="0xcecece" middleColor="0xeae9e8" endColor="0xeae9e8" strokeColor="0xe5e5e0" height="8"/>
+		<loading_bar color="0xc5556e"/>
+		<text color="0x4d4b4b"/>
+		<buttons_background color="0xeae9e8" overColor="0xf4f4f3" strokeColor="0xe5e5e0"/>
+		<buttons beginColor="0x303030" middleColor="0x686868" endColor="0x232121" overBeginColor="0xc5556e" overMiddleColor="0xb3566c" overEndColor="0x70001a" strokeColor="0xffffff"/>
+		<volume_shape beginActiveColor="0xa90329" endActiveColor="0x6d0019" beginNormalColor="0x686868" endNormalColor="0x232121" inactiveColor="0xcccccc"/>
+		<volume_slider backgroundStrokeBeginColor="0xbec0c1" backgroundStrokeEndColor="0xbec0c1" mainBackgroundColor="0xffffff" sliderBackColor="0xeae9e8" sliderBackStrokeColor="0xe5e5e0" sliderBeginColor="0xa90329" sliderEndColor="0x6d0019"/>
+		<embed_button strokeColor="0x929292" beginColor="0xe6e5e4" middleColor="0xe6e5e4" endColor="0xe6e5e4" symbolColor="0x8c8c8c" symbolOverColor="0xa20327"/>
+		<embed_window mainStrokeColor="0x9D9D9D" mainColor="0xffffff" strokeColor="0xd1d1d1" color="0xe1e1e1" textColor="0xa90329" embedTextColor="0x000000" buttonColor="0xa90329" buttonStrokeColor="0xa90329" buttonTextColor="0xffffff" buttonRollOverColor="0xffffff" backgroundOverColor="0xcd4444" titleText="SELECT THIS TEXT:" copyButtonText="COPY" />
+		<shuffle color="0x000000" overColor="0xa20327"/>
+	</controls_bar>
+	
+	<player_reflections value="false"/>
+	
+	<bottom_background beginColor="0xD19B1D" endColor="0x2e2b2b"/>
+	
+	<distance_between_images value="25"/>
+	
+	<sideways_margin value="0"/>
+	
+	<tooltip visible="true" backgroundColor="0xeaeaea" textColor="0x28201d" roundsColor="0x28201d"/>
+	
+	<albums_over_stop_moving value="false"/>
+	
+	<playlist_looping value="false"/>
+	
+	<notused value=""/>
+	
+	<buy_download_buttons beginColor="0xb4b4b4" endColor="0x949493" strokeColor="0x8d8b8b" overBeginColor="0xc6c6c6" overEndColor="0xa8a8a8" overStrokeColor="0x8d8b8b" pressedBeginColor="0xe70001" pressedEndColor="0xa3011d" pressedStrokeColor="0xb20129" signColor="0xffffff"/>
+	
+	<embed_button_visibility value="true"/>
+	
+	<autoslide_pause_at_margins value="1"/>
+	
+	<player_size width="560" height="306"/>
+	
+	<sound_volume value="50"/>
+	
+	<image_size width="200" height="200"/>
+	
+	<automatically_begin_playlist value="false" albumIndex="1"/>
+	
+	<auto_shuffle value="false"/>
+	
+	<start_playlist_playing_automatically value="false"/>
+	
+	<links_target value="_blank"/>
+	
+	<strings album="Album: " song="Now playing: " playing="play" pausing="pause" forwarding="next" rewarding="previous" shuffle="shuffle" volume="volume" share="SHARE"/>
+	
+</settings>
