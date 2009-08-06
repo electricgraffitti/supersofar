@@ -68,19 +68,19 @@ h1 {
 }
 h2 {
   /*font-size: 153.9%;*/
-  font-size: 160.9%;
+  font-size: 135%;
 }
 .header {
-  background: #000;
+  background: #000 url('../images/super_main_header.jpg') no-repeat;
 }
 .header_side {
-  background: #d19b1d;
+  background: #d19b1d url('../images/super_side_header.jpg') no-repeat;
 }
 .header h2 {
   padding: 5px;
-  color: #8e0000;
+  color: #efefef;
   position: relative;
-  width: 70%;
+  width: 450px;
 }
 .header_side h2 {
   padding: 5px;
@@ -390,10 +390,10 @@ ul#main_nav li a {
 /*******************SIDEBAR**************/
 #sidebar {
   position: relative;
-  background: #8e0000;
+  background: #8e0000 url('../images/super_sidebar_bg.jpg') repeat-x;
   width: 300px;
   margin: 0px;
-  min-height: 988px;
+  min-height: 1200px;
 }
 .sidebar_show_listing {
   background: #fff;
@@ -408,8 +408,11 @@ ul#main_nav li a {
 #ft {
   width: 960px;
   min-height: 100px;
-  background: #000;
+  background: #000 url('../images/super_footer.jpg') no-repeat ;
   border-top: 1px solid #8e0000;
+}
+#ft, #ft a {
+  color: #efefef;
 }
 /*********************************************/
 /******************* FORMS *******************/

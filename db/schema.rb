@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090803231355) do
+ActiveRecord::Schema.define(:version => 20090805040001) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(:version => 20090803231355) do
   create_table "albums", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "itunes_url"
+    t.string   "cd_baby_url"
+    t.string   "rhapsody_url"
+    t.string   "amazon_url"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -130,11 +134,11 @@ ActiveRecord::Schema.define(:version => 20090803231355) do
 
   create_table "songs", :force => true do |t|
     t.integer  "album_id"
+    t.string   "title"
+    t.text     "description"
     t.string   "track_number"
     t.boolean  "active"
     t.boolean  "downloadable"
-    t.string   "title"
-    t.text     "description"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -142,6 +146,11 @@ ActiveRecord::Schema.define(:version => 20090803231355) do
     t.string   "song_content_type"
     t.integer  "song_file_size"
     t.datetime "song_updated_at"
+    t.boolean  "buy"
+    t.string   "itunes_link"
+    t.string   "cd_baby_link"
+    t.string   "rhapsody_link"
+    t.string   "amazon_link"
   end
 
 end
