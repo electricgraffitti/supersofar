@@ -1,4 +1,7 @@
 class SongsController < ApplicationController
+  
+  before_filter :require_admin
+  
   # GET /songs
   # GET /songs.xml
   def index
