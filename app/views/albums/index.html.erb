@@ -12,6 +12,9 @@
     <% album.songs.each do |song|%>
     <li>
       <%= h song.track_number %> - <%= h song.title %> - <%= link_to "Lyrics", lyric_path(song.lyrics) %>
+      <% if current_admin %>
+       | <%= link_to "Edit Song", edit_song_path(song) %>
+      <% end %>
     </li>
     <% end %>
     </ul>
