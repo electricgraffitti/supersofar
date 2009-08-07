@@ -35,8 +35,8 @@ class Song < ActiveRecord::Base
   # PaperClip
   has_attached_file :song,
                     :style => {:thumb => "30x30>"},
-                    :url => "songs/:id/:style_:basename.:extension",
-                    :path => "songs/:id/:style_:basename.:extension"
+                    :url => "/songs/:id/:style_:basename.:extension",
+                    :path => "/songs/:id/:style_:basename.:extension"
   
   # PaperClip Validations
   validates_attachment_presence :song
