@@ -2,6 +2,7 @@
   <h2>Supersofar Photos</h2>
 </div>
 <% @photo_albums.each do |photo_album| %>
+<% unless photo_album.photos.blank? %>
 <div class="full_wrap">
     <%= link_to image_tag(photo_album.photos.first.photo.url(:thumb), :alt => photo_album.name, :class => "left image_wrap"), photo_album %>
   <h3><%=h photo_album.name %></h3>
@@ -15,6 +16,7 @@
   </div>
   </div>
   <div class="clear"></div>
+<% end %>
 <% end %>
 
 <% if current_admin %>
