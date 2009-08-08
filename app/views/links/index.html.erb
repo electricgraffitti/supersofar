@@ -4,6 +4,8 @@
   <%= link_to 'New Link', new_link_path, :class => "right full_wrap" %>
   <% end %>
 </div>
-<% @links.each do |link| %>
-<%= render :partial => "links/link", :locals => {:link => link}%>
+<% @link_types.each do |link_type|%>
+  <% link_type.links.each do |link| %>
+    <%= render :partial => "links/link", :locals => {:link => link}%>
+  <% end %>
 <% end %>

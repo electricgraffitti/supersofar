@@ -18,6 +18,8 @@
 
 class Link < ActiveRecord::Base
   
+  belongs_to :link_type
+  
   # RedCloth (textilize)
   acts_as_textiled  :description
   
