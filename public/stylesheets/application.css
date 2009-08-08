@@ -177,6 +177,9 @@ h2 a.small_text {
 .dark_grey {
   background: #1c1c1c;
 }
+.rust {
+  color: #8e0000;
+}
 .center {
   text-align: center;
 }
