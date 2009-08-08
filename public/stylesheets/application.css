@@ -193,7 +193,7 @@ h2 a.small_text {
   padding-bottom: 10px;
   border-bottom: 1px dotted #999999;
 }
-cite {
+.lyric {
   color: #666;
   font-style: italic;
   text-align: center;
