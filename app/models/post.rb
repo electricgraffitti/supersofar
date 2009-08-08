@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090709033159
+# Schema version: 20090808030702
 #
 # Table name: posts
 #
@@ -9,6 +9,7 @@
 #  permalink   :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
+#  author      :string(255)
 #
 
 class Post < ActiveRecord::Base

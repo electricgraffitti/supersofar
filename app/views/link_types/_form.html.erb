@@ -1,0 +1,11 @@
+<% form_for(@link_type) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :link_type %><br />
+    <%= f.text_field :link_type %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

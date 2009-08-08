@@ -1,0 +1,11 @@
+<div class="full_wrap">
+  <%= link_to image_tag(link.link_image.url(:thumb), :alt => link.title, :class => "left image_wrap"), link.link%>
+  <h2><%= link_to link.title, link.link %></h2>
+  <div class="description">
+    <%= link.description %>
+  </div>
+  <% if current_admin %>
+  <%= link_to 'Edit', edit_link_path(link) %> | 
+  <%= link_to 'Delete', link, :confirm => 'Are you sure?', :method => :delete %>
+  <% end %>
+</div>

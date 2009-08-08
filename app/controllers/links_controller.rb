@@ -1,4 +1,7 @@
 class LinksController < ApplicationController
+
+  before_filter :require_admin, :except => ['index']
+  
   # GET /links
   # GET /links.xml
   def index

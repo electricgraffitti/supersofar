@@ -1,13 +1,21 @@
 # == Schema Information
-# Schema version: 20090712142245
+# Schema version: 20090808030702
 #
 # Table name: songs
 #
 #  id                :integer(4)      not null, primary key
+#  album_id          :integer(4)
 #  title             :string(255)
 #  description       :text
+#  track_number      :string(255)
+#  active            :boolean(1)
+#  downloadable      :boolean(1)
+#  buy               :boolean(1)
+#  itunes_link       :string(255)
+#  cd_baby_link      :string(255)
+#  rhapsody_link     :string(255)
+#  amazon_link       :string(255)
 #  permalink         :string(255)
-#  album_id          :integer(4)
 #  created_at        :datetime
 #  updated_at        :datetime
 #  song_file_name    :string(255)

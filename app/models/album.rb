@@ -1,11 +1,15 @@
 # == Schema Information
-# Schema version: 20090712124759
+# Schema version: 20090808030702
 #
 # Table name: albums
 #
 #  id                 :integer(4)      not null, primary key
 #  title              :string(255)
 #  description        :text
+#  itunes_url         :string(255)
+#  cd_baby_url        :string(255)
+#  rhapsody_url       :string(255)
+#  amazon_url         :string(255)
 #  permalink          :string(255)
 #  created_at         :datetime
 #  updated_at         :datetime

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090805040001) do
+ActiveRecord::Schema.define(:version => 20090808032648) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -63,12 +63,24 @@ ActiveRecord::Schema.define(:version => 20090805040001) do
     t.datetime "attachment_updated_at"
   end
 
+  create_table "link_types", :force => true do |t|
+    t.string   "link_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "links", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "link"
     t.string   "permalink"
+    t.integer  "link_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link_image_file_name"
+    t.string   "link_image_content_type"
+    t.integer  "link_image_file_size"
+    t.datetime "link_image_updated_at"
   end
 
   create_table "lyrics", :force => true do |t|
@@ -139,6 +151,11 @@ ActiveRecord::Schema.define(:version => 20090805040001) do
     t.string   "track_number"
     t.boolean  "active"
     t.boolean  "downloadable"
+    t.boolean  "buy"
+    t.string   "itunes_link"
+    t.string   "cd_baby_link"
+    t.string   "rhapsody_link"
+    t.string   "amazon_link"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -146,11 +163,6 @@ ActiveRecord::Schema.define(:version => 20090805040001) do
     t.string   "song_content_type"
     t.integer  "song_file_size"
     t.datetime "song_updated_at"
-    t.boolean  "buy"
-    t.string   "itunes_link"
-    t.string   "cd_baby_link"
-    t.string   "rhapsody_link"
-    t.string   "amazon_link"
   end
 
 end
