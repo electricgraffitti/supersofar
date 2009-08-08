@@ -26,7 +26,7 @@ class Lyric < ActiveRecord::Base
   # end
   
   # RedCloth (textilize)
-  acts_as_textiled  :description
+  # acts_as_textiled  :description
   
   # Named Scopes
   named_scope :small_list, lambda { |limit| {:limit => limit }}

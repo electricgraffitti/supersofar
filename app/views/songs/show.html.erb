@@ -18,8 +18,8 @@
       </p>
   </div>
   <div class="grid_6">
-  <h4>Lyrics:</h4>
-  <%= @lyrics.description %>
+  <h4><%= @song.title %> Lyrics:</h4>
+  <cite><%= @lyrics.description %></cite>
   </div>
   <div class="clear"></div>
   <% if current_admin %>

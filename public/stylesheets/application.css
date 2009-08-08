@@ -193,6 +193,11 @@ h2 a.small_text {
   padding-bottom: 10px;
   border-bottom: 1px dotted #999999;
 }
+cite {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
 /***Firefox dotted line tweak***/
 a {
   outline: none;
