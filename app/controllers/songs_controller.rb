@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   
-  before_filter :require_admin  
+  before_filter :require_admin, :except => ['show']
   
   # GET /songs
   # GET /songs.xml
@@ -17,6 +17,7 @@ class SongsController < ApplicationController
   # GET /songs/1.xml
   def show
     @song = Song.find(params[:id])
+    @lyrics = Lyric.find_by_song_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

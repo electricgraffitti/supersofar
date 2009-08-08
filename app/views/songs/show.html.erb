@@ -1,23 +1,58 @@
-<p>
-  <b>Title:</b>
-  <%=h @song.title %>
-</p>
+<div class="header">
+  <h2><%= (@song.title).capitalize %></h2>
+</div>
+<div class="full_wrap">
+  <div class="grid_3">
+    <div id="player" class="left"></div>
+    <%= image_tag @song.album.cover(:thumb), :class => "left image_wrap2" %>
+      <b>Description:</b>
+      <%= @song.description %>
+      <p>
+        <%= link_to "Buy on iTunes", @song.itunes_link %>
+      </p>
+      <p>
+        <%= link_to "Buy on CD Baby", @song.cd_baby_link %>
+      </p>
+      <p>
+        <%= link_to "Rhapsody", @song.rhapsody_link %>
+      </p>
+  </div>
+  <div class="grid_6">
+  <h4>Lyrics:</h4>
+  <%= @lyrics.description %>
+  </div>
+  <div class="clear"></div>
+  <% if current_admin %>
+  <%= link_to 'Edit', edit_song_path(@song) %> |
+  <% end %>
+  <%= link_to 'Back', songs_path %>
+</div>
+<script type="text/javascript">
 
-<p>
-  <b>Description:</b>
-  <%=h @song.description %>
-</p>
+	var stageW = 110;
+	var stageH = 28.5; 
+	var cacheBuster = Date.parse(new Date());
+	
+	var flashvars = {};
+	var params = {};
+	
+	params.bgcolor = "#ffffff";
+	params.allowfullscreen = "true";
+	
+	
+	flashvars.stageW = stageW;
+	flashvars.stageH = stageH;
+	
+	flashvars.pathToFiles = "";
+	
+	flashvars.artistName = "Album: <%= @song.album.title %>";
+	flashvars.songName = "<%= @song.title %>";
+	flashvars.songURL = "<%= '../songs/' + @song.id.to_s + '/original_' + @song.song_file_name %>";
+	
+	flashvars.settingsPath = "../swfs/small_player/xml/settings.xml";
+	flashvars.xmlPath = "<%= song_url(@song, :xml) %>";
 
-<p>
-  <b>Permalink:</b>
-  <%=h @song.permalink %>
-</p>
-
-<p>
-  <b>Album:</b>
-  <%=h @song.album_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+	
+	swfobject.embedSWF("../swfs/small_player/preview.swf?t="+cacheBuster, "player", stageW, stageH, "9.0.124", "js/expressInstall.swf", flashvars, params);
+	
+</script>

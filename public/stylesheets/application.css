@@ -357,10 +357,13 @@ ul#main_nav li a {
   font-size: 80%;
   color: #b78c09;
 }
-.image_wrap {
+.image_wrap, .image_wrap2 {
   margin: 5px;
   padding: 5px;
   border: 1px solid #8e0000;
+}
+.image_wrap2 {
+  margin: 5px 0px;
 }
 .index_show {
   background: #000;
