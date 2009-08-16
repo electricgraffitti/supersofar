@@ -1,0 +1,17 @@
+<div class="full_wrap">
+  <% fans.each do |fan| %>
+    <div class="grid_10 fan_index_wrap">
+      <%= image_tag(fan.profile.avatar.url(:thumb), :alt => fan.profile.nickname, :class => "left index_image", :width => 25) %>
+      <h2 class="grid_3 alpha omega"><%=h fan.profile.nickname %></h2>
+      <div class="grid_6 alpha omega"><%=h fan.status %></div>
+      <div class="grid_3 small_text"><%=h fan.profile.city %>, <%=h fan.profile.state.full_name %></div>
+    <% if fan.id == current_fan.id %>
+    <div class="clear"></div>
+      <%= link_to 'My Profile', fan, :class => "small_text" %>
+      <%= link_to 'Edit My Profile', edit_fan_path(fan), :class => "small_text" %>
+      <%= link_to 'Delete My Account', fan, :confirm => 'Are you sure?', :method => :delete, :class => "small_text" %>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+<div class="clear"></div>

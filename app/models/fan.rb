@@ -15,7 +15,8 @@
 
 class Fan < ActiveRecord::Base
   
-  has_one :profile
+  has_one :profile, :dependent => :destroy
+  has_many :fan_statuses, :dependent => :destroy
   
   
   validates_presence_of :email, :password
@@ -27,6 +28,24 @@ class Fan < ActiveRecord::Base
   acts_as_authentic do |c|
     login_field :email
     validate_login_field :false
+  end
+  
+  # Named Scopes
+  
+  
+  # Sets Permalink Routes
+  def to_param
+    permalink = self.profile.first_name + "-" + self.profile.last_name
+    "#{id}-#{permalink}"
+  end
+  
+  def status 
+    fstatus = self.fan_statuses.last
+    if fstatus.blank?
+      fstatus = "Status unavailable"
+    else
+      fstatus = fstatus.status_description
+    end
   end
   
 end

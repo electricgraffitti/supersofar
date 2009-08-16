@@ -1,0 +1,11 @@
+<% form_for(fan_status) do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :fan_id, :value => current_fan.id %>
+  <p>
+    <%= f.label :status_description, "Your Status" %><br />
+    <%= f.text_area :status_description, :rows => 4, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

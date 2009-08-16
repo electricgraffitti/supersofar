@@ -1,37 +1,46 @@
-<div class="full_wrap mc_bg">
-  <div class="">
-    <%= image_tag(@profile.avatar.url(:thumb), :alt => @profile.nickname, :class => "left image_wrap") %>
-      <h1><%=h @profile.nickname %></h1>
+<div class="full_wrap mc_bg grid_11">
+  <div class="grid_5 alpha omega">  
+    <div class="">
+      <%= image_tag(@profile.avatar.url(:thumb), :alt => @profile.nickname, :class => "left image_wrap") %>
+        <h1><%=h @profile.nickname %></h1>
+    </div>
+    <p>
+      <b>Name:</b>
+      <%=h @profile.full_name %>
+    </p>
+    <p>
+      <b>Email:</b>
+      <%=h @fan.email %>
+    </p>
+  <div class="clear"></div>
+    <p>
+      <b>Address:</b>
+      <%=h @profile.address %>
+    </p>
+
+    <p>
+      <b>City:</b>
+      <%=h @profile.city %>
+    </p>
+
+    <p>
+      <b>State:</b>
+      <%=h @profile.state.full_name %>
+    </p>
+
+    <p>
+      <b>Zipcode:</b>
+      <%=h @profile.zipcode %>
+    </p>
   </div>
-  <p>
-    <b>Name:</b>
-    <%=h @profile.full_name %>
-  </p>
-  <p>
-    <b>Email:</b>
-    <%=h @fan.email %>
-  </p>
-<div class="clear"></div>
-  <p>
-    <b>Address:</b>
-    <%=h @profile.address %>
-  </p>
-
-  <p>
-    <b>City:</b>
-    <%=h @profile.city %>
-  </p>
-
-  <p>
-    <b>State:</b>
-    <%=h @profile.state.full_name %>
-  </p>
-
-  <p>
-    <b>Zipcode:</b>
-    <%=h @profile.zipcode %>
-  </p>
-  <p><%= link_to 'Edit Profile', edit_profile_path(@profile) %></p>
+  <div class="grid_5 status_wrap">
+    <%=h @profile.fan.status %>
+  </div>
+  <div class="grid_4 margin_top_10">
+    <%= render :partial => "fan_statuses/fan_status", :locals => {:fan_status => @fan_status}  %>
+  </div>
+  <div class="clear"></div>
+  <p><%= link_to 'Edit My Profile', edit_profile_path(@profile) %></p>
 </div>
 <div class="clear"></div>
   

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090812050920) do
+ActiveRecord::Schema.define(:version => 20090816225448) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -68,6 +68,13 @@ ActiveRecord::Schema.define(:version => 20090812050920) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "fan_statuses", :force => true do |t|
+    t.text     "status_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "fan_id"
   end
 
   create_table "fans", :force => true do |t|
@@ -145,6 +152,7 @@ ActiveRecord::Schema.define(:version => 20090812050920) do
     t.string   "nickname"
     t.string   "address"
     t.string   "city"
+    t.integer  "state_id"
     t.string   "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -152,7 +160,6 @@ ActiveRecord::Schema.define(:version => 20090812050920) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.integer  "state_id"
   end
 
   create_table "sessions", :force => true do |t|

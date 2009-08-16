@@ -1,4 +1,7 @@
 class ProfilesController < ApplicationController
+  
+  before_filter :require_admin, :only => [:index]
+  
   # GET /profiles
   # GET /profiles.xml
   def index

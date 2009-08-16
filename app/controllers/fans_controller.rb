@@ -1,7 +1,6 @@
 class FansController < ApplicationController
-  
-  before_filter :require_admin, :only => [:index];
-  before_filter :require_fan, :except => [:new, :create];
+
+  before_filter :require_fan, :except => [:new, :create]
   # GET /fans
   # GET /fans.xml
   def index
@@ -18,6 +17,7 @@ class FansController < ApplicationController
   def show
     @fan = Fan.find(params[:id])
     @profile = Profile.find_by_fan_id(@fan.id)
+    @fan_status = FanStatus.new
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @fan }
