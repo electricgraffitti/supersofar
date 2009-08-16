@@ -33,7 +33,7 @@ class Show < ActiveRecord::Base
   # Named Scopes
   named_scope :small_list, lambda { |limit| {:limit => limit }}
   named_scope :last_created, :order => "created_at DESC"
-  
+  named_scope :upcoming, :order => "date ASC", :conditions => ["date > ?", Time.now]
   #============================= Class Methods ==================================#
   
   # Sets Permalink Routes

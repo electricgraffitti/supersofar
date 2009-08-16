@@ -1,0 +1,16 @@
+<div class="full_wrap">
+<% form_for(@fan_session) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+    <%= f.submit 'Login', :class => "btn"%>
+<% end %>
+</div>
+<div class="clear"></div>

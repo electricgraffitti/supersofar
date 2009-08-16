@@ -1,0 +1,43 @@
+<p>
+  <b>Fan:</b>
+  <%=h @profile.fan_id %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%=h @profile.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @profile.last_name %>
+</p>
+
+<p>
+  <b>Nickname:</b>
+  <%=h @profile.nickname %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @profile.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @profile.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @profile.state %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%=h @profile.zipcode %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

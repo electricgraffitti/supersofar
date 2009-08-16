@@ -4,7 +4,7 @@
   <h2>Supersofar Photo Album: <%=h @photo_album.name %></h2>
 </div>
 <div id="photo_album">
-<% @photo_album.photos.each do |photo| %>
+<% @photo_album.photos.last_created.each do |photo| %>
   <%= render :partial => "photos/photo_thumb", :locals => {:photo => photo} %>
 <% end %>
 </div>

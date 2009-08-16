@@ -1,10 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :link_types
-
   
   map.admin_login "admin-login", :controller => "admin_sessions", :action => "new"
   map.admin_logout "admin-logout", :controller => "admin_sessions", :action => "destroy"
   
+  map.fan_login "superfan-login", :controller => "fan_sessions", :action => "new"
+  map.fan_logout "superfan-logout", :controller => "fan_sessions", :action => "destroy"
+
+  map.resources :profiles
+  map.resources :fan_sessions
+  map.resources :fans
+  map.resources :link_types
   map.resources :photos
   map.resources :photo_albums  
   map.resources :admin_sessions

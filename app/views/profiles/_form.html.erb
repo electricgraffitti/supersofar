@@ -1,0 +1,43 @@
+<% form_for(@profile, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+<div class="grid_5">  
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </p>
+  <p>
+    <%= f.label :avatar, "Upload an Avatar" %>
+    <%= f.file_field :avatar, :size => 16 %>
+  </p>
+</div>
+<div class="grid_5">
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state_id %><br />
+    <%= f.collection_select :state_id, State.all, :id, :full_name, {} %>
+  </p>
+  <p>
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode %>
+  </p>
+</div>
+<div class="clear"></div>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

@@ -1,0 +1,37 @@
+<div class="full_wrap mc_bg">
+  <div class="">
+    <%= image_tag(@profile.avatar.url(:thumb), :alt => @profile.nickname, :class => "left image_wrap") %>
+      <h1><%=h @profile.nickname %></h1>
+  </div>
+  <p>
+    <b>Name:</b>
+    <%=h @profile.full_name %>
+  </p>
+  <p>
+    <b>Email:</b>
+    <%=h @fan.email %>
+  </p>
+<div class="clear"></div>
+  <p>
+    <b>Address:</b>
+    <%=h @profile.address %>
+  </p>
+
+  <p>
+    <b>City:</b>
+    <%=h @profile.city %>
+  </p>
+
+  <p>
+    <b>State:</b>
+    <%=h @profile.state.full_name %>
+  </p>
+
+  <p>
+    <b>Zipcode:</b>
+    <%=h @profile.zipcode %>
+  </p>
+  <p><%= link_to 'Edit Profile', edit_profile_path(@profile) %></p>
+</div>
+<div class="clear"></div>
+  

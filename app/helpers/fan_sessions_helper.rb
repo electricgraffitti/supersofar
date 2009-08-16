@@ -1,0 +1,2 @@
+module FanSessionsHelper
+end

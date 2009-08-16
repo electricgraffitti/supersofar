@@ -1,7 +1,5 @@
 class AdminSessionsController < ApplicationController
-  
-  
-  
+    
   def new
     @admin_session = AdminSession.new
   end

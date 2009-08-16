@@ -1,0 +1,34 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <tr>
+    <th>Fan</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Nickname</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%=h profile.fan_id %></td>
+    <td><%=h profile.first_name %></td>
+    <td><%=h profile.last_name %></td>
+    <td><%=h profile.nickname %></td>
+    <td><%=h profile.address %></td>
+    <td><%=h profile.city %></td>
+    <td><%=h profile.state %></td>
+    <td><%=h profile.zipcode %></td>
+    <td><%= link_to 'Show', profile %></td>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Destroy', profile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New profile', new_profile_path %>

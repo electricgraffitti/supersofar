@@ -111,6 +111,10 @@ p {
 .full_wrap {
   margin: 10px 10px;
 }
+.mc_bg {
+  background: #efefef url('../images/super_main_content_bg.jpg') repeat-y;
+  border: 1px solid #ccc;
+}
 .relative {
   position: relative;
 }
@@ -312,13 +316,11 @@ ul#main_nav li {
   float: left;
   height: 40px;
   text-align: center;
-  width: 100px;
 }
 ul#main_nav li a {
   display: block;
   float: left;
-  width: 100px;
-  padding: 12px 0px;
+  padding: 10px 15px;
   height: 20px;
   color: #fff;
 }
@@ -349,6 +351,7 @@ ul#main_nav li a {
   margin: 0px;
   position: relative;
   min-height: 850px;
+  font-size: 12px;
 }
 #main_content {
   background: #fff;
@@ -398,6 +401,46 @@ ul#main_nav li a {
   width: 280px;
   overflow: hidden;
 }
+.fan_login, .fan_logout {
+  position: relative;
+  width: 300px;
+  background: transparent url('../images/login_logout.png') 0px -350px no-repeat;
+  height: 70px;
+  float: left;
+}
+.fan_logout {
+  text-align: center;
+  background: transparent url('../images/login_logout.png') 0px -140px no-repeat;
+}
+.fan_logout a {
+  margin: 0 auto;
+  display: block;
+  padding: 20px;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  text-indent: -3000em;
+}
+.fan_logout a:hover {
+    background: transparent url('../images/login_logout.png') -55px -70px no-repeat;
+}
+.fan_login a {
+  display: block;
+  float: left;
+  padding: 20px;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  margin-right: 5px;
+  font-weight: bold;
+  text-indent: -3000em;
+}
+.fan_login a.login_link:hover {
+  background: url('../images/login_logout.png') 0px -280px no-repeat;
+}
+.fan_login a.register_link:hover {
+  background: url('../images/login_logout.png') -145px -210px no-repeat;
+}
 /*****************************************/
 /*******************SIDEBAR**************/
 #sidebar {
@@ -439,9 +482,9 @@ input.short_input {
 /*********************************************/
 /*******************BUTTONS*******************/
 .btn {
-  background: #000 url('../images/healthcare_fraud_btn_white.png') bottom left repeat-x;
+  background: transparent url('../images/healthcare_fraud_btn_white.png') bottom left repeat-x;
   padding: 5px; 
-  color: #fff;
+  color: #000;
   border: 1px solid #333; 
   text-decoration: none; 
   cursor: pointer; 

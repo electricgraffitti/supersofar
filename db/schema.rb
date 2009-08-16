@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090808032648) do
+ActiveRecord::Schema.define(:version => 20090812050920) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -61,6 +61,23 @@ ActiveRecord::Schema.define(:version => 20090808032648) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+  end
+
+  create_table "fan_sessions", :force => true do |t|
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fans", :force => true do |t|
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "last_login_at"
   end
 
   create_table "link_types", :force => true do |t|
@@ -121,6 +138,23 @@ ActiveRecord::Schema.define(:version => 20090808032648) do
     t.string   "author"
   end
 
+  create_table "profiles", :force => true do |t|
+    t.integer  "fan_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "nickname"
+    t.string   "address"
+    t.string   "city"
+    t.string   "zipcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.integer  "state_id"
+  end
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -163,6 +197,16 @@ ActiveRecord::Schema.define(:version => 20090808032648) do
     t.string   "song_content_type"
     t.integer  "song_file_size"
     t.datetime "song_updated_at"
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "abbreviation", :limit => 2
+    t.string   "full_name"
+    t.boolean  "display",                   :default => true
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

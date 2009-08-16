@@ -7,9 +7,38 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
-  helper_method :current_admin_session, :current_admin, :super?
+  helper_method :current_admin_session, :current_admin, :current_fan, :current_fan_session, :super?
 
   private
+  
+    def current_fan_session
+      return @current_fan_session if defined?(@current_fan_session)
+      @current_fan_session = FanSession.find
+    end
+
+    def current_fan
+      return @current_fan if defined?(@current_fan)
+      @current_fan = current_fan_session && current_fan_session.record
+    end
+  
+    def require_fan
+      unless current_fan
+        store_location
+        flash[:notice] = "You must be logged in to access this page"
+        redirect_to new_fan_session_url
+        return false
+      end
+    end
+
+    def require_no_fan
+      if current_fan
+        store_location
+        flash[:notice] = "You must be logged out to access this page"
+        redirect_to account_url
+        return false
+      end
+    end
+  
     def current_admin_session
       return @current_admin_session if defined?(@current_admin_session)
       @current_admin_session = AdminSession.find

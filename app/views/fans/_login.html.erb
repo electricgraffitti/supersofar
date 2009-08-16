@@ -1,0 +1,13 @@
+<div class="sidebar_container">
+   <% if current_fan %>
+    <div class="fan_logout">
+      <%= link_to "Logout", fan_logout_path, :class => "logout_link" %>
+      </div>
+    <% else %>
+    <div class="fan_login">
+      <%= link_to "Login", fan_login_path, :class => "login_link" %>
+      <%= link_to "Register", new_fan_path, :class => "register_link" %>
+    </div>
+    <% end %>
+</div>
+<div class="clear"></div>

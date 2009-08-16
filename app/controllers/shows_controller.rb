@@ -5,7 +5,7 @@ class ShowsController < ApplicationController
   # GET /shows
   # GET /shows.xml
   def index
-    @shows = Show.all
+    @shows = Show.upcoming
 
     respond_to do |format|
       format.html # index.html.erb
