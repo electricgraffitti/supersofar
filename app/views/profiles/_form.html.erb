@@ -1,5 +1,6 @@
 <% form_for(@profile, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
+  <%= f.hidden_field :fan_id, :value => current_fan.id %>
 <div class="grid_5">  
   <p>
     <%= f.label :first_name %><br />

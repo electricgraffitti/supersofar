@@ -15,7 +15,7 @@
 
 class Fan < ActiveRecord::Base
   
-  belongs_to :profile
+  has_one :profile
   
   
   validates_presence_of :email, :password

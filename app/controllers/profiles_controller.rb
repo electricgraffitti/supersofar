@@ -45,7 +45,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.save
         flash[:notice] = 'Profile was successfully created.'
-        format.html { redirect_to(@profile.fan) }
+        format.html { redirect_to fan_path(current_fan) }
         format.xml  { render :xml => @profile, :status => :created, :location => @profile }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
         flash[:notice] = 'Profile was successfully updated.'
-        format.html { redirect_to(@profile.fan) }
+        format.html { redirect_to fan_path(current_fan) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
