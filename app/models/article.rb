@@ -16,6 +16,7 @@ class Article < ActiveRecord::Base
   
   # Association
   has_many :assets, :as => :attachable, :dependent => :destroy
+  has_many :comments, :as => :commentable, :dependent => :destroy
   
   # Validations
   validates_presence_of :title, :description, :permalink, :author

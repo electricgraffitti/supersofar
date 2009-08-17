@@ -30,6 +30,8 @@ class Song < ActiveRecord::Base
   has_many :lyrics, :class_name => "Lyric"
   accepts_nested_attributes_for :lyrics, :allow_destroy => true
   
+  has_many :comments, :as => :commentable, :dependent => :destroy
+  
   
   # Validations
   validates_presence_of :title, :description, :permalink

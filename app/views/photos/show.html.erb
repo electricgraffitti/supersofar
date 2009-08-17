@@ -1,6 +1,12 @@
 <% page_title(@photo.title)%>
-
+<div class="header">
+  <h2><%= (@photo.title) %></h2>
+</div>
 <%= render @photo %>
+<div class="clear"></div>
+<div class="grid_10">
+  <%= render :partial => "comments/comment_block", :locals => {:model_object => @photo} %>
+</div>
 <div class="clear"></div>
 <div class="full_wrap">
 <% if current_admin %>

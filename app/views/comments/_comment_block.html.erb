@@ -1,0 +1,25 @@
+<div class="full_wrap grid_10 alpha omega">
+  <div class="grid_5 alpha omega right">
+    <% if current_fan %>
+    <%= render :partial => "comments/form", :locals => {:model_object => model_object} %>
+    <% else %>
+    <p>You need to become a fan to leave comments</p><br/>
+    <p><%= link_to "Register Here", new_fan_path %></p>
+    <% end %>
+  </div>
+  
+<% if model_object.comments %>
+<h3>Comments</h3>
+  <% model_object.comments.each do |c| %>
+    <div class="fan_index_wrap grid_5 alpha omega">
+      <%= image_tag(c.fan.profile.avatar.url(:thumb), :alt => c.fan.profile.nickname, :class => "left index_image", :width => 25) %>
+      <h5 class="rust"><%=h c.fan.profile.nickname %></h5>
+      <%=h c.content %>
+    </div>
+  <% end %>
+<% else %>
+<div class="grid_5 fan_index_wrap">
+  <p>No Comments</p>
+</div>
+<% end %>
+</div>

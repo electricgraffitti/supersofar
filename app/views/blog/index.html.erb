@@ -3,7 +3,7 @@
   <h2>Supersofar Blog</h2>
 </div>
 <% @posts.each do |post| %>
-<%= render :partial => "posts/post", :locals => {:post => post}%>
+<%= render :partial => "posts/index_post", :locals => {:post => post}%>
 <% end %>
 <% if current_admin %>
 <%= link_to 'New Post', new_post_path, :class => "full_wrap" %>

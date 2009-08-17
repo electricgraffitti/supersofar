@@ -20,7 +20,7 @@
 class Photo < ActiveRecord::Base
   
   belongs_to :photo_album
-  
+  has_many :comments, :as => :commentable, :dependent => :destroy
   # Validations
   validates_presence_of :title, :description, :permalink, :author
   

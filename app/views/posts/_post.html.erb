@@ -6,4 +6,9 @@
   <div class="description">
     <%= post.description %>
   </div>
+  <div class="clear"></div>
+  <div class="grid_10">
+    <%= render :partial => "comments/comment_block", :locals => {:model_object => post} %>
+  </div>
+  <div class="clear"></div>
 </div>

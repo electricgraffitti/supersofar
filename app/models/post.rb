@@ -17,6 +17,8 @@ class Post < ActiveRecord::Base
   # Validations
   validates_presence_of :title, :description, :permalink, :author
   
+  has_many :comments, :as => :commentable, :dependent => :destroy
+  
   # Thinking Sphinx Indexes
   # define_index do
   #   indexes description

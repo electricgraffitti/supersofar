@@ -1,0 +1,15 @@
+<div>
+  <h3>Add Comment</h3>
+<% form_for([model_object, Comment.new]) do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :fan_id, :value => current_fan.id %>
+  <%= f.hidden_field :commentable_id, :value => model_object.id %>
+  <%= f.hidden_field :commentable_type, :value => model_object.class %>
+  <p>
+    <%= f.text_area :content, :rows => 3, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.submit 'Submit', :class => "btn" %>
+  </p>
+<% end %>
+</div>

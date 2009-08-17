@@ -1,0 +1,9 @@
+<div class="full_wrap">
+  <h2><%= link_to post.title, post_path(post) %></h2>
+  <span class="author_text">
+    <%= post.author_credentials %>
+  </span><br/>
+  <div class="description">
+    <%= truncate(post.description, 200, link_to(" ... more", post_path(post))) %>
+  </div>
+</div>

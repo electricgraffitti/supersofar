@@ -1,5 +1,14 @@
-<%= render @article %>
+<% page_title(@article.title)%>
+<div class="header">
+  <h2><%= (@article.title) %></h2>
+</div>
 <div class="full_wrap">
+<%= render @article %>
+<div class="clear"></div>
+<div class="grid_10">
+  <%= render :partial => "comments/comment_block", :locals => {:model_object => @article} %>
+</div>
+<div class="clear"></div>
 <% if current_admin %>
 <%= link_to "Edit", edit_article_path(@article) %> |
 <%= link_to "Delete", @article, :confirm => "Are you sure?", :method => :delete %> |
