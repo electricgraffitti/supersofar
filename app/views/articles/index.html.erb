@@ -2,9 +2,11 @@
   <%= link_to "RSS Feed", articles_url(:rss), :class => 'right rss_link' %>
   <h2>Supersofar News</h2>
 </div>
+<% if current_admin %>
+<%= link_to 'New Article', new_article_path, :class => "full_wrap" %>
+<% end %>
+<div class="grid_11 mc_bg">
 <% @articles.each do |article| %>
 <%= render :partial => "articles/index_article", :locals => {:article => article}%>
 <% end %>
-<% if current_admin %>
-<%= link_to 'New article', new_article_path, :class => "full_wrap" %>
-<% end %>
+</div>
