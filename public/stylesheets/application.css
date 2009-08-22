@@ -361,6 +361,13 @@ ul#main_nav li a {
   color: #000;
   min-height: 700px;
 }
+#you_tube_wrap {
+  position: relative;
+  float: left;
+  width: 660px;
+  height: 425px;
+  overflow: hidden;
+}
 .form_wrap {
   margin-left: 50px;
 }
