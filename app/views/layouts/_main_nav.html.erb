@@ -3,9 +3,6 @@
     <% if current_admin %>
     <li id="dashboard"><%= link_to "Dashboard", dashboard_path %></li>
     <% end %>
-    <% if current_fan %>
-    <li id="dashboard"><%= link_to "My Profile", fan_path(current_fan) %></li>
-    <% end %>
     <li id="home"><%= link_to "Home", home_path %></li>
     <li id="news"><%= link_to "News", articles_path %></li>
     <li id="albums"><%= link_to "Discography", albums_path %></li>
