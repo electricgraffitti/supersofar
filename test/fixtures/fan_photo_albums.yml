@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: fan_photo_albums
+#
+#  id            :integer(4)      not null, primary key
+#  fan_id        :integer(4)
+#  name          :string(255)
+#  private_album :boolean(1)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fan_id: 1
+  name: MyString
+  private_album: false
+
+two:
+  fan_id: 1
+  name: MyString
+  private_album: false

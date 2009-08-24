@@ -18,6 +18,7 @@ class FansController < ApplicationController
     @fan = Fan.find(params[:id])
     @profile = Profile.find_by_fan_id(@fan.id)
     @fan_status = FanStatus.new
+    @photo_album = PhotoAlbum.new
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @fan }

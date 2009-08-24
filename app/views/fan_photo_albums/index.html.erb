@@ -1,0 +1,24 @@
+<h1>Listing fan_photo_albums</h1>
+
+<table>
+  <tr>
+    <th>Fan</th>
+    <th>Name</th>
+    <th>Private</th>
+  </tr>
+
+<% @fan_photo_albums.each do |fan_photo_album| %>
+  <tr>
+    <td><%=h fan_photo_album.fan_id %></td>
+    <td><%=h fan_photo_album.name %></td>
+    <td><%=h fan_photo_album.private_album %></td>
+    <td><%= link_to 'Show', fan_photo_album %></td>
+    <td><%= link_to 'Edit', edit_fan_photo_album_path(fan_photo_album) %></td>
+    <td><%= link_to 'Destroy', fan_photo_album, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New fan_photo_album', new_fan_photo_album_path %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090817001713) do
+ActiveRecord::Schema.define(:version => 20090824000648) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -70,6 +70,27 @@ ActiveRecord::Schema.define(:version => 20090817001713) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "fan_id"
+  end
+
+  create_table "fan_photo_albums", :force => true do |t|
+    t.integer  "fan_id"
+    t.string   "name"
+    t.boolean  "private_album"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fan_photos", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "fan_photo_album_id"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "fan_photo_file_name"
+    t.string   "fan_photo_content_type"
+    t.integer  "fan_photo_file_size"
+    t.datetime "fan_photo_updated_at"
   end
 
   create_table "fan_sessions", :force => true do |t|

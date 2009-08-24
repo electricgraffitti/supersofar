@@ -1,0 +1,25 @@
+<div class="full_wrap mc_bg">
+<% form_for(@fan_photo, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label "Choose An Album" %><br />
+    <%= collection_select(:fan_photo, :fan_photo_album_id, current_fan.fan_photo_albums, :id, :name)%> or <%= link_to "Create a New Album", new_fan_photo_album_path %>
+  </p>
+  <p>
+    <%= f.label :fan_photo, "Browse for Photo" %><br/>
+    <%= f.file_field :fan_photo, :size => 16 %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
+</div>

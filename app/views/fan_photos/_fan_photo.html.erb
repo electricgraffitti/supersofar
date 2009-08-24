@@ -1,0 +1,20 @@
+<div class="full_wrap">
+  <div class="photo_wrap">
+    <%= image_tag(fan_photo.fan_photo.url(:medium)) %>
+  </div>
+<div class="photo_content_wrap">
+  <p>
+    <h3>Caption: <%=h fan_photo.title %></h3>
+    <span class="author_text">Uploaded on <%= (fan_photo.created_at).to_s(:event_time) %></span>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%= fan_photo.description %>
+  </p>
+
+  <p>
+    <b>Photo album:</b>
+    <%= link_to @fan_photo.fan_photo_album.name, fan_photo_album_path(@fan_photo.fan_photo_album) %>
+  </p></div>
+</div>

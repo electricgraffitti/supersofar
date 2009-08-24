@@ -5,6 +5,7 @@ db/schema.sql
 .DS_Store
 public/songs/*
 public/photos/*
+public/fan_photos/*
 public/album_covers/*
 public/attachments/*
 public/avatars/*

@@ -1,0 +1,15 @@
+<% form_for(@fan_photo_album) do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :fan_id, :value => current_fan.id %>
+  <p>
+    <%= f.label :name, "Album Name" %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :private_album, "Make Album Private" %><br />
+    <%= f.check_box :private_album %>
+  </p>
+  <p>
+    <%= f.submit 'Submit', :class => "btn" %>
+  </p>
+<% end %>

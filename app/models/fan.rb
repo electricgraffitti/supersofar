@@ -18,6 +18,8 @@ class Fan < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
   has_many :fan_statuses, :dependent => :destroy
   has_many :comments, :dependent => :destroy
+  has_many :fan_photo_albums
+  has_many :fan_photos, :through => :fan_photo_albums
   
   
   validates_presence_of :email, :password

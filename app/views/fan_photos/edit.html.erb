@@ -1,0 +1,28 @@
+<h1>Editing fan_photo</h1>
+
+<% form_for(@fan_photo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :fan_photo_album_id %><br />
+    <%= f.text_field :fan_photo_album_id %>
+  </p>
+  <p>
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @fan_photo %> |
+<%= link_to 'Back', fan_photos_path %>

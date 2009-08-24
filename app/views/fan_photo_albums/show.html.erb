@@ -1,0 +1,19 @@
+<%# page_title("#{@fan_photo_album.fan.full_name} Photos | " + @fan_photo_album.name)%>
+
+<div class="full_wrap">
+  <h2>Photo Album: <%=h @fan_photo_album.name %></h2>
+</div>
+<div id="photo_album">
+<% @fan_photo_album.fan_photos.last_created.each do |fan_photo| %>
+  <%= render :partial => "fan_photos/fan_photo_thumb", :locals => {:fan_photo => fan_photo} %>
+<% end %>
+</div>
+<div class="clear"></div>
+<div class="full_wrap">
+<% if current_fan %>
+<%= link_to 'Upload Photos', new_fan_photo_path %> |
+<%= link_to 'Edit Album', edit_fan_photo_album_path(@fan_photo_album) %> |
+<%= link_to 'Delete Album', @fan_photo_album, :confirm => 'All Photo will be deleted too. Are you sure?', :method => :delete %> |
+<% end %>
+<%= link_to 'Back', fan_path(@fan_photo_album.fan) %>
+</div>
