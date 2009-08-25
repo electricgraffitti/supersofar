@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090824000648) do
+ActiveRecord::Schema.define(:version => 20090825020546) do
 
   create_table "admin_sessions", :force => true do |t|
     t.string   "username"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20090824000648) do
     t.datetime "updated_at"
   end
 
+  add_index "fan_photo_albums", ["fan_id"], :name => "index_fan_photo_albums_on_fan_id"
+
   create_table "fan_photos", :force => true do |t|
     t.string   "title"
     t.string   "description"
@@ -92,6 +94,8 @@ ActiveRecord::Schema.define(:version => 20090824000648) do
     t.integer  "fan_photo_file_size"
     t.datetime "fan_photo_updated_at"
   end
+
+  add_index "fan_photos", ["fan_photo_album_id"], :name => "index_fan_photos_on_fan_photo_album_id"
 
   create_table "fan_sessions", :force => true do |t|
     t.string   "email"
@@ -106,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20090824000648) do
     t.datetime "updated_at"
     t.integer  "fan_id"
   end
+
+  add_index "fan_statuses", ["fan_id"], :name => "index_fan_statuses_on_fan_id"
 
   create_table "fans", :force => true do |t|
     t.string   "email"
@@ -137,6 +143,8 @@ ActiveRecord::Schema.define(:version => 20090824000648) do
     t.datetime "link_image_updated_at"
   end
 
+  add_index "links", ["link_type_id"], :name => "index_links_on_link_type_id"
+
   create_table "lyrics", :force => true do |t|
     t.text     "description"
     t.string   "permalink"
@@ -144,6 +152,8 @@ ActiveRecord::Schema.define(:version => 20090824000648) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "lyrics", ["song_id"], :name => "index_lyrics_on_song_id"
 
   create_table "photo_albums", :force => true do |t|
     t.string   "name"
@@ -165,6 +175,8 @@ ActiveRecord::Schema.define(:version => 20090824000648) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
   end
+
+  add_index "photos", ["photo_album_id"], :name => "index_photos_on_photo_album_id"
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -191,6 +203,9 @@ ActiveRecord::Schema.define(:version => 20090824000648) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  add_index "profiles", ["fan_id"], :name => "index_profiles_on_fan_id"
+  add_index "profiles", ["state_id"], :name => "index_profiles_on_state_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -235,6 +250,8 @@ ActiveRecord::Schema.define(:version => 20090824000648) do
     t.integer  "song_file_size"
     t.datetime "song_updated_at"
   end
+
+  add_index "songs", ["album_id"], :name => "index_songs_on_album_id"
 
   create_table "states", :force => true do |t|
     t.string   "abbreviation", :limit => 2
