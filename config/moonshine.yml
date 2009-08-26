@@ -3,7 +3,7 @@
 :user: root
 #:time_zone: UTC
 :deploy_to: /var/www/apps/super
-:domain: 174.143.27.251
+:domain: supersofar.com
 :domain_aliases:
   - www.supersofar.com
 
