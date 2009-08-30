@@ -15,6 +15,11 @@ class FanPhotoAlbum < ActiveRecord::Base
   has_many :fan_photos, :dependent => :destroy
   belongs_to :fan
   
+  
+  # Named Scope
+  
+  named_scope :not_private, :conditions => ["private_album = ?", false]
+  
   #============================= Class Methods ==================================#
   
   # Sets Permalink Routes

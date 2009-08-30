@@ -407,8 +407,11 @@ ul#main_nav li a {
   border: 1px solid #8e0000;
   float: left;
 }
+.album_creds {
+  margin-top: 5px;
+}
 .thumb_wrap, .fan_thumb_wrap {
-  margin: 10px;
+  margin: 5px;
   width: 100px;
   float: left;
 }

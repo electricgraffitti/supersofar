@@ -1,33 +1,18 @@
 <div class="header">
   <h2>Supersofar Photos</h2>
 </div>
-<div class="full_wrap mc_bg">
-<% @photo_albums.each do |photo_album| %>
-<% unless photo_album.photos.blank? %>
-<div class="full_wrap">
-  <div class=" left image_wrap">
-    <div class="thumbnail">
-      <%= link_to image_tag(photo_album.photos.first.photo.url(:thumb), :alt => photo_album.name, :width => 100), photo_album %>
-    </div>
-  </div>
-  <h3><%=h photo_album.name %></h3>
-  <span class="author_text"><%=h photo_album.photos.count %> Photos in Album</span>
-  <div class="right">
   <% if current_admin %>
-  <%= link_to 'Edit', edit_photo_album_path(photo_album) %> |
-  <%= link_to 'Delete', photo_album, :confirm => 'All Photo will be deleted too. Are you sure?', :method => :delete %> |
+  <div class="full_wrap">
+  <%= link_to 'Create a New Album', new_photo_album_path %> | 
+  <%= link_to 'Upload Photos', new_photo_path %>
+  </div>
   <% end %>
-  <%= link_to 'View Album', photo_album %>
-  </div>
-  </div>
-  <div class="clear"></div>
-<% end %>
-<% end %>
-
-<% if current_admin %>
-<div class="full_wrap">
-<%= link_to 'Create a New Album', new_photo_album_path %> | 
-<%= link_to 'Upload Photos', new_photo_path %>
+<div class="full_wrap mc_bg">
+<%= render :partial => 'photo_album' %>
 </div>
-<% end %>
+<div class="header">
+  <h2>Fan Photos</h2>
+</div>
+<div class="full_wrap mc_bg">
+<%= render :partial => "fan_photo_albums/fan_photo_album", :locals => {:fan_photo_albums => @fan_albums} %>
 </div>

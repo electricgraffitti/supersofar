@@ -6,6 +6,7 @@ class PhotoAlbumsController < ApplicationController
   # GET /photo_albums.xml
   def index
     @photo_albums = PhotoAlbum.all
+    @fan_albums = FanPhotoAlbum.not_private
 
     respond_to do |format|
       format.html # index.html.erb

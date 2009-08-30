@@ -1,0 +1,18 @@
+<% fan_photo_albums.each do |photo_album| %>
+<% unless photo_album.fan_photos.blank? %>
+    <div class="left fan_thumb_wrap photo_wrap">
+      <div class="fan_thumbnail">
+        <%= link_to image_tag(photo_album.fan_photos.first.fan_photo.url(:thumb), :alt => photo_album.name, :width => 50), photo_album %>
+      </div>
+    </div>
+    <div class="album_creds grid_4 alpha">
+      <h3><%=h photo_album.name %></h3>
+      <span class="author_text grid_4 alpha">Uploaded By: <%=h photo_album.fan.profile.full_name %></span>
+      <span class="author_text grid_4 alpha"><%=h photo_album.fan_photos.count %> Photos in Album</span>
+      <div class="album_links grid_4 alpha">
+        <%= link_to 'View Album', photo_album %>
+      </div>
+    </div>
+<div class="clear"></div>
+<% end %>
+<% end %>
