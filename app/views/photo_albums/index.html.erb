@@ -4,7 +4,11 @@
 <% @photo_albums.each do |photo_album| %>
 <% unless photo_album.photos.blank? %>
 <div class="full_wrap">
-    <%= link_to image_tag(photo_album.photos.first.photo.url(:thumb), :alt => photo_album.name, :class => "left image_wrap"), photo_album %>
+  <div class=" left image_wrap">
+    <div class="thumbnail">
+      <%= link_to image_tag(photo_album.photos.first.photo.url(:thumb), :alt => photo_album.name, :width => 100), photo_album %>
+    </div>
+  </div>
   <h3><%=h photo_album.name %></h3>
   <span class="author_text"><%=h photo_album.photos.count %> Photos in Album</span>
   <div class="right">

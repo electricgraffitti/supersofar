@@ -407,6 +407,20 @@ ul#main_nav li a {
   border: 1px solid #8e0000;
   float: left;
 }
+.thumb_wrap {
+  margin: 10px;
+  width: 100px;
+  float: left;
+}
+.thumbnail {
+  width: 100px;
+  height: 60px;
+  overflow: hidden;
+}
+.photo_caption {
+  float: left;
+  margin-top: 5px;
+}
 .photo_content_wrap {
   float: left;
   margin-left: 10px;
