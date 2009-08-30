@@ -1,6 +1,7 @@
 <div class="header">
   <h2>Supersofar Photos</h2>
 </div>
+<div class="full_wrap mc_bg">
 <% @photo_albums.each do |photo_album| %>
 <% unless photo_album.photos.blank? %>
 <div class="full_wrap">
@@ -29,3 +30,4 @@
 <%= link_to 'Upload Photos', new_photo_path %>
 </div>
 <% end %>
+</div>

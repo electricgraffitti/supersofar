@@ -377,7 +377,7 @@ ul#main_nav li a {
 }
 .image_wrap, .image_wrap2 {
   margin: 5px;
-  padding: 5px;
+  padding: 3px;
   border: 1px solid #8e0000;
 }
 .image_wrap2 {
@@ -403,19 +403,26 @@ ul#main_nav li a {
   color: #fff;
 }
 .photo_wrap {
-  padding: 5px 5px 5px 5px;
+  padding: 3px;
   border: 1px solid #8e0000;
   float: left;
 }
-.thumb_wrap {
+.thumb_wrap, .fan_thumb_wrap {
   margin: 10px;
   width: 100px;
   float: left;
 }
-.thumbnail {
+.fan_thumb_wrap {
+  width: 50px;
+}
+.thumbnail, .fan_thumbnail {
   width: 100px;
   height: 60px;
   overflow: hidden;
+}
+.fan_thumbnail {
+  width: 50px;
+  height: 50px;
 }
 .photo_caption {
   float: left;
@@ -424,6 +431,10 @@ ul#main_nav li a {
 .photo_content_wrap {
   float: left;
   margin-left: 10px;
+}
+.fan_photo_album_list_wrap {
+ height: 50px;
+ float: left;
 }
 .video_wrap {
   background: #000;

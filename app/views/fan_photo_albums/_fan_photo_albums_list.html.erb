@@ -1,22 +1,26 @@
 <% current_fan.fan_photo_albums.each do |photo_album| %>
-  <% unless photo_album.fan_photos.blank? %>
-<div class="full_wrap mc_bg grid_11 alpha">  
-  <div class="grid_5 alpha">
-      <%= link_to image_tag(photo_album.fan_photos.first.fan_photo.url(:thumb), :alt => photo_album.name, :class => "left image_wrap"), photo_album %>
-        <h3><%=h photo_album.name %></h3>
-        <span class="author_text">Album created: <span class="red"><%=h (photo_album.created_at).to_s(:event_time) %></span></span>
-        <span class="author_text"><%=h photo_album.fan_photos.count %> Photos in Album</span>
-        
-        <div class="left">
+<% unless photo_album.fan_photos.blank? %>
+<div class="full_wrap grid_11 alpha">  
+  <div class="fan_photo_album_list_wrap grid_6 alpha">
+    <div class="left fan_thumb_wrap image_wrap">
+      <div class="fan_thumbnail">
+        <%= link_to image_tag(photo_album.fan_photos.first.fan_photo.url(:thumb), :alt => photo_album.name, :width => 50), photo_album %>
+      </div>
+    </div>
+    <div class="full_wrap">
+      <h3><%=h photo_album.name %></h3>
+      <span class="author_text grid_4 alpha">Album created: <span class="red"><%=h (photo_album.created_at).to_s(:event_time) %></span></span>
+      <span class="author_text grid_4 alpha"><%=h photo_album.fan_photos.count %> Photos in Album</span>
+      <div class="album_links grid_4 alpha">
         <% if current_fan %>
-        <%= link_to 'Edit', edit_fan_photo_album_path(photo_album) %> |
-        <%= link_to 'Delete', photo_album, :confirm => 'All Photo will be deleted too. Are you sure?', :method => :delete %> |
-        <% end %>
-        <%= link_to 'View Album', photo_album %>
-        </div>
-        <div class="clear"></div>
-      <% end %>
-    <% end %>
+          <%= link_to 'Edit', edit_fan_photo_album_path(photo_album) %> |
+          <%= link_to 'Delete', photo_album, :confirm => 'All Photo will be deleted too. Are you sure?', :method => :delete %> |
+          <% end %>
+          <%= link_to 'View Album', photo_album %>
+      </div>
+    </div>
   </div>
-  <div class="clear"></div>
 </div>
+<div class="clear"></div>
+<% end %>
+<% end %>

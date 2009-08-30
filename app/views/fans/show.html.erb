@@ -5,9 +5,11 @@
 <div class="clear"></div>
   <div class="header">
     <h2>My Photos</h2>
-    <span class="full_wrap right"><%= link_to "Create a New Photo Album", new_fan_photo_album_path %> | <%= link_to "Upload Photos", new_fan_photo_path %></span>
+    <span class="full_wrap right">
+      <%= link_to "Create a New Photo Album", new_fan_photo_album_path %> | <%= link_to "Upload Photos", new_fan_photo_path %>
+    </span>
   </div>
 <div class="clear"></div>
-<%= render :partial => "fan_photo_albums/fan_photo_albums_list" %>
+  <%= render :partial => "fan_photo_albums/fan_photo_albums_list" %>
 <div class="clear"></div>
   
