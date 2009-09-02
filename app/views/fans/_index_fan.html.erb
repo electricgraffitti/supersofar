@@ -1,5 +1,6 @@
 <div class="full_wrap">
   <% fans.each do |fan| %>
+  <% if fan.profile %>
     <div class="grid_10 fan_index_wrap">
       <%= image_tag(fan.profile.avatar.url(:thumb), :alt => fan.profile.nickname, :class => "left index_image", :width => 25) %>
       <h2 class="grid_3 alpha omega"><%=h fan.profile.nickname %></h2>
@@ -12,6 +13,7 @@
       <%= link_to 'Delete My Account', fan, :confirm => 'Are you sure?', :method => :delete, :class => "small_text" %>
     <% end %>
     </div>
+  <% end %>
   <% end %>
 </div>
 <div class="clear"></div>
