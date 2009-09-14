@@ -30,10 +30,6 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
   create_table "albums", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "itunes_url"
-    t.string   "cd_baby_url"
-    t.string   "rhapsody_url"
-    t.string   "amazon_url"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -41,6 +37,10 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "itunes_url"
+    t.string   "cd_baby_url"
+    t.string   "rhapsody_url"
+    t.string   "amazon_url"
   end
 
   create_table "articles", :force => true do |t|
@@ -98,10 +98,10 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
   add_index "fan_photos", ["fan_photo_album_id"], :name => "index_fan_photos_on_fan_photo_album_id"
 
   create_table "fan_sessions", :force => true do |t|
-    t.string   "email"
-    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "password"
   end
 
   create_table "fan_statuses", :force => true do |t|
@@ -132,15 +132,15 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
   create_table "links", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "link"
     t.string   "permalink"
-    t.integer  "link_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "link_image_file_name"
     t.string   "link_image_content_type"
     t.integer  "link_image_file_size"
     t.datetime "link_image_updated_at"
+    t.string   "link"
+    t.integer  "link_type_id"
   end
 
   add_index "links", ["link_type_id"], :name => "index_links_on_link_type_id"
@@ -165,15 +165,15 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
   create_table "photos", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "author"
     t.integer  "photo_album_id"
-    t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "permalink"
+    t.string   "author"
   end
 
   add_index "photos", ["photo_album_id"], :name => "index_photos_on_photo_album_id"
@@ -194,7 +194,6 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
     t.string   "nickname"
     t.string   "address"
     t.string   "city"
-    t.integer  "state_id"
     t.string   "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -202,6 +201,7 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "state_id"
   end
 
   add_index "profiles", ["fan_id"], :name => "index_profiles_on_fan_id"
@@ -220,20 +220,27 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
   create_table "shows", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "venue"
-    t.string   "address"
-    t.datetime "date"
-    t.string   "other_bands"
-    t.string   "ticket_price"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "venue"
+    t.string   "address"
+    t.datetime "date"
+    t.string   "ticket_price"
+    t.string   "other_bands"
   end
 
   create_table "songs", :force => true do |t|
-    t.integer  "album_id"
     t.string   "title"
     t.text     "description"
+    t.string   "permalink"
+    t.integer  "album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "song_file_name"
+    t.string   "song_content_type"
+    t.integer  "song_file_size"
+    t.datetime "song_updated_at"
     t.string   "track_number"
     t.boolean  "active"
     t.boolean  "downloadable"
@@ -242,13 +249,6 @@ ActiveRecord::Schema.define(:version => 20090825020546) do
     t.string   "cd_baby_link"
     t.string   "rhapsody_link"
     t.string   "amazon_link"
-    t.string   "permalink"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "song_file_name"
-    t.string   "song_content_type"
-    t.integer  "song_file_size"
-    t.datetime "song_updated_at"
   end
 
   add_index "songs", ["album_id"], :name => "index_songs_on_album_id"
