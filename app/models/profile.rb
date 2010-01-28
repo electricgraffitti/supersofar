@@ -1,5 +1,4 @@
 # == Schema Information
-# Schema version: 20090812050920
 #
 # Table name: profiles
 #
@@ -10,7 +9,6 @@
 #  nickname            :string(255)
 #  address             :string(255)
 #  city                :string(255)
-#  state_id            :integer(4)
 #  zipcode             :string(255)
 #  created_at          :datetime
 #  updated_at          :datetime
@@ -18,6 +16,7 @@
 #  avatar_content_type :string(255)
 #  avatar_file_size    :integer(4)
 #  avatar_updated_at   :datetime
+#  state_id            :integer(4)
 #
 
 class Profile < ActiveRecord::Base
