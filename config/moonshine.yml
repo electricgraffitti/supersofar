@@ -1,6 +1,6 @@
 :ruby: ree
 :application: super
-:user: root
+:user: rails
 #:time_zone: UTC
 :deploy_to: /var/www/apps/super
 :domain: supersofar.com

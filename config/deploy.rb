@@ -1,1 +1,1 @@
-server 'egm', :app, :web, :db, :primary => true
+server 'cube2', :app, :web, :db, :primary => true
