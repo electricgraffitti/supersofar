@@ -42,7 +42,7 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 require 'will_paginate'
-require 'hpricot'
+# require 'hpricot'
 require 'RedCloth'
 
 # Custom Time View
