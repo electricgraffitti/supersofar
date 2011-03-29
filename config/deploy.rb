@@ -1,1 +1,1 @@
-server 'cube2', :app, :web, :db, :primary => true
+server 'yourapp.com', :app, :web, :db, :primary => true

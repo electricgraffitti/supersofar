@@ -28,3 +28,5 @@ config.action_view.cache_template_loading            = true
 # config.threadsafe!
 
 SITE_URL = "http://www.supersofar.com"
+# Use postfix for mail delivery 
+ActionMailer::Base.delivery_method = :sendmail 
